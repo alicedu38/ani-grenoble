@@ -1,0 +1,7 @@
+ani_grenoble_app:
+    resource: "@AniGrenobleAppBundle/Resources/config/routing.xml"
+    prefix:   /
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
