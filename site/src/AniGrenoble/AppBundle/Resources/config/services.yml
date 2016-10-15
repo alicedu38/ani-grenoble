@@ -1,0 +1,4 @@
+services:
+#    ani_grenoble_app.example:
+#        class: AniGrenoble\AppBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
