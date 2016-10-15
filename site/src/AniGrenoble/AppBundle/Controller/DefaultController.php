@@ -10,4 +10,24 @@ class DefaultController extends Controller
     {
         return $this->render('AniGrenobleAppBundle:Default:index.html.twig');
     }
+
+    public function viewAction()
+    {
+        return $this->render('AniGrenobleAppBundle:Default:view.html.twig');
+    }
+
+    public function addAction()
+    {
+        return $this->render('AniGrenobleAppBundle:Default:add.html.twig');
+    }
+
+    public function editAction()
+    {
+        return $this->render('AniGrenobleAppBundle:Default:edit.html.twig');
+    }
+
+    public function deleteAction()
+    {
+        return $this->render('AniGrenobleAppBundle:Default:delete.html.twig');
+    }
 }

@@ -1,1 +1,10 @@
-Hello World!
+{% extends "AniGrenobleAppBundle:Include:layout.html.twig" %}
+
+{% block title %}Accueil - {{ parent() }}{% endblock %}
+
+{% block head %}{{ parent() }}{% endblock %}
+
+{% block site_body %}
+<p>Hello World!</p>
+
+{% endblock %}
