@@ -1,0 +1,3 @@
+ani_grenoble_utilisateur_homepage:
+    path:     /
+    defaults: { _controller: AniGrenobleAppBundle:Default:index }

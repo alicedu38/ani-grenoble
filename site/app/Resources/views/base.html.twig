@@ -13,9 +13,7 @@
             <!--Import jQuery before materialize.js-->
             <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
             <!-- Compiled and minified JavaScript -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
-          
-            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>            
         {% endblock %}
         
     </head>
@@ -27,24 +25,21 @@
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                     <ul class="right hide-on-med-and-down">
                         <!-- On n'affiche le lien qu'au utilisateur abilités -->
-                        <!--{% if is_granted('ROLE_ADMIN') %}-->
+                        <!--{% if is_granted('ROLE_SUPER_ADMIN') %}-->
                             <li>
                                 <a class="nav-link" href="{{ path('ani_grenoble_app_annonce_add') }}">Ajouter un article<span class="sr-only">(current)</span></a>
                             </li>
                         <!--{% endif %}-->
-                        <li>
-                            <a class="nav-link" href="#">Abonnements</a>
-                        </li>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             <li>
-                                <a class="nav-link" href="#">Change mot de passe</a>
+                                <a class="nav-link" href="{{ path('fos_user_change_password') }}">Change mot de passe</a>
                             </li>                            
                             <li>
-                                <a class="nav-link" href="#">Deconnexion</a>
+                                <a class="nav-link" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
                             </li>
                         {% else %}
                             <li>
-                                <a class="nav-link" href="#">Connexion</a>
+                                <a class="nav-link" href="{{ path('fos_user_security_login') }}">Connexion</a>
                             </li>
                         {% endif %}                       
                     </ul>
@@ -55,24 +50,21 @@
                     {% endif %}
                     <ul class="side-nav" id="mobile-demo">
                         <!-- On n'affiche le lien qu'au utilisateur abilités -->
-                        {% if is_granted('ROLE_ADMIN') %}
+                        {% if is_granted('ROLE_SUPER_ADMIN') %}
                             <li>
                                 <a class="nav-link" href="{{ path('ani_grenoble_app_annonce_add') }}">Ajouter un article<span class="sr-only">(current)</span></a>
                             </li>
                         {% endif %}
-                        <li>
-                            <a class="nav-link" href="#">Abonnements</a>
-                        </li>
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             <li>
-                                <a class="nav-link" href="#">Change mot de passe</a>
+                                <a class="nav-link" href="{{ path('fos_user_change_password') }}">Change mot de passe</a>
                             </li>                            
                             <li>
-                                <a class="nav-link" href="#">Deconnexion</a>
+                                <a class="nav-link" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
                             </li>
                         {% else %}
                             <li>
-                                <a class="nav-link" href="#">Connexion</a>
+                                <a class="nav-link" href="{{ path('fos_user_security_login') }}">Connexion</a>
                             </li>
                         {% endif %} 
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
@@ -91,7 +83,7 @@
             <hr>
 
             <footer>
-                <p>Copyright © {{ 'now'|date('Y') }}.</p>
+                <p>Copyright © {{ 'now'|date('Y') }}. Tous droits réservés</p>
             </footer>
         </div>
         {% block javascripts %}

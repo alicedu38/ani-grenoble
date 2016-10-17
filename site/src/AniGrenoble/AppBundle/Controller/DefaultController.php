@@ -3,6 +3,7 @@
 namespace AniGrenoble\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class DefaultController extends Controller
 {
@@ -16,6 +17,9 @@ class DefaultController extends Controller
         return $this->render('AniGrenobleAppBundle:Default:view.html.twig');
     }
 
+    /**
+     * @Security("has_role('ROLE_ADMIN')")
+     */
     public function addAction()
     {
         return $this->render('AniGrenobleAppBundle:Default:add.html.twig');
