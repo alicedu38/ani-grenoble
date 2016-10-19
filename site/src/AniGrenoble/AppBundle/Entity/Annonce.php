@@ -56,6 +56,13 @@ class Annonce
      */
     private $publie;
 
+    private $published = true;
+  
+    public function __construct()
+    {
+        $this->date = new \Datetime();
+    }
+
 
     /**
      * Get id
