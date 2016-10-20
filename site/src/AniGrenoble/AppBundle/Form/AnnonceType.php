@@ -22,7 +22,14 @@ class AnnonceType extends AbstractType
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'attr' => array('class' => 'date')))
-            ->add('publie', 'checkbox', array('required' => false))
+            ->add('image',      new ImageType(), array('required' => false)) // Imbriqué le form image dans celui-ci
+            ->add('categories', 'entity', array( //Affiche la liste des catégories
+                'class'    => 'AniGrenobleAppBundle:Categorie',
+                'property' => 'nom',
+                'multiple' => true
+                //'expanded' => true //Checkbox au lieu d'une liste select
+            ))
+            ->add('publie', 'checkbox', array('required' => false))// Element non obligatoire dans le form
             ->add('save', 'submit');
     }
     

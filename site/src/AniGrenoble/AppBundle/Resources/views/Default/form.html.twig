@@ -61,7 +61,7 @@
 		
     </div>
 
-    {#<div class="row">
+    <div class="row">
 		{{ form_label(form.image.url, "Image URL", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 
 		<div class="col-sm-9">
@@ -87,7 +87,7 @@
 		<div class="col-sm-9">
 			{{ form_widget(form.categories, {'attr': {'class': 'form-control'}}) }}
 		</div>
-    </div>#}
+    </div>
 
   	{# Pour le bouton, pas de label ni d'erreur, on affiche juste le widget #}
   	{{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}

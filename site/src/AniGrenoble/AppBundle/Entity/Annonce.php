@@ -3,6 +3,10 @@
 namespace AniGrenoble\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Annonce
@@ -25,6 +29,12 @@ class Annonce
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255)
+     * @Assert\Length(
+     *      min = 4,
+     *      max = 80,
+     *      minMessage = "Le titre de l'article doit faire {{ limit }} caractères mini",
+     *      maxMessage = "Le titre de l'article doit faire {{ limit }} caractères maxi"
+     * )
      */
     private $titre;
 
@@ -32,6 +42,7 @@ class Annonce
      * @var string
      *
      * @ORM\Column(name="contenu", type="text")
+     * @Assert\NotBlank(message="Le contenu ne peux pas être vide.")
      */
     private $contenu;
 
@@ -39,6 +50,12 @@ class Annonce
      * @var string
      *
      * @ORM\Column(name="auteur", type="string", length=255)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 30,
+     *      minMessage = "Nom de l'auteur doit faire {{ limit }} caractères mini",
+     *      maxMessage = "Nom de l'auteur doit faire {{ limit }} caractères maxi"
+     * )
      */
     private $auteur;
 
@@ -46,8 +63,21 @@ class Annonce
      * @var \DateTime
      *
      * @ORM\Column(name="date", type="date")
+     * @Assert\DateTime(message="Date non valide.")
      */
     private $date;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AniGrenoble\AppBundle\Entity\Categorie", cascade={"persist"})
+     */
+    private $categories;
+
+    /**
+     * @ORM\OneToOne(targetEntity="AniGrenoble\AppBundle\Entity\Image", cascade={"persist", "remove"})
+     * @ORM\JoinColumn(nullable=true)
+     * @Assert\Valid()
+     */
+    private $image;
 
     /**
      * @var bool
@@ -60,7 +90,9 @@ class Annonce
   
     public function __construct()
     {
+        // Par défaut, la date de l'annonce est la date d'aujourd'hui
         $this->date = new \Datetime();
+        $this->categories = new ArrayCollection();
     }
 
 
@@ -187,5 +219,61 @@ class Annonce
     public function getPublie()
     {
         return $this->publie;
+    }
+
+    /**
+     * Add categories
+     *
+     * @param \AniGrenoble\AppBundle\Entity\Categorie $categories
+     * @return Annonce
+     */
+    public function addCategory(\AniGrenoble\AppBundle\Entity\Categorie $categories)
+    {
+        $this->categories[] = $categories;
+
+        return $this;
+    }
+
+    /**
+     * Remove categories
+     *
+     * @param \AniGrenoble\AppBundle\Entity\Categorie $categories
+     */
+    public function removeCategory(\AniGrenoble\AppBundle\Entity\Categorie $categories)
+    {
+        $this->categories->removeElement($categories);
+    }
+
+    /**
+     * Get categories
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCategories()
+    {
+        return $this->categories;
+    }
+
+    /**
+     * Set image
+     *
+     * @param \AniGrenoble\AppBundle\Entity\Image $image
+     * @return Annonce
+     */
+    public function setImage(\AniGrenoble\AppBundle\Entity\Image $image = null)
+    {
+        $this->image = $image;
+
+        return $this;
+    }
+
+    /**
+     * Get image
+     *
+     * @return \AniGrenoble\AppBundle\Entity\Image 
+     */
+    public function getImage()
+    {
+        return $this->image;
     }
 }
