@@ -120,17 +120,14 @@ class Image
         }
 
         // On récupère le nom original du fichier de l'internaute
-        $nom = $this->id ."". $this->file->getClientOriginalName();
+        $nom = $this->file->getClientOriginalName();
 
         // On sauvegarde le nom de fichier dans notre attribut $url
         $this->url = "/ani-grenoble/site/web/uploads/img/".$nom;
 
         if ($this->alt === null) {
             $this->alt = $this->file->getClientOriginalName();
-        }/*else{
-            // On crée également le alt de notre balise <img> si il n'existe pas
-            $this->alt = $nom;
-        }*/
+        }
     }
 
     /**
@@ -145,7 +142,7 @@ class Image
         }
 
         // On déplace le fichier envoyé dans le répertoire de notre choix
-        $this->file->move($this->getUploadRootDir(), $this->id ."". $this->file->getClientOriginalName());             
+        $this->file->move($this->getUploadRootDir(), $this->file->getClientOriginalName());             
     }
 
     /**

@@ -12,7 +12,21 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('AniGrenobleAppBundle:Default:index.html.twig');
+        // Pour récupérer touts les Annonce : on utilise getAnnonce()
+        $listeAnnoncesEvenement = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('AniGrenobleAppBundle:Annonce')
+            ->getAnnonceWithCategories(array('Evenement'));
+
+        $listeAnnoncesReunionHebdomadaire = $this->getDoctrine()
+            ->getManager()
+            ->getRepository('AniGrenobleAppBundle:Annonce')
+            ->getAnnonceWithCategories(array('Reunion_hebdomadaire'));
+
+        return $this->render('AniGrenobleAppBundle:Default:index.html.twig', array(
+            'listeAnnoncesEvenement' => $listeAnnoncesEvenement,
+            'listeAnnoncesReunionHebdomadaire' => $listeAnnoncesReunionHebdomadaire,
+            ));
     }
 
     public function viewAction()

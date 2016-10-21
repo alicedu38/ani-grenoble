@@ -70,7 +70,7 @@ class Annonce
     /**
      * @ORM\ManyToMany(targetEntity="AniGrenoble\AppBundle\Entity\Categorie", cascade={"persist"})
      */
-    private $categories;
+    public $categories;
 
     /**
      * @ORM\OneToOne(targetEntity="AniGrenoble\AppBundle\Entity\Image", cascade={"persist", "remove"})
