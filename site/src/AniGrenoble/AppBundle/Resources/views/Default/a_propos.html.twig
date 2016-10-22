@@ -5,52 +5,69 @@
 {% block head %}{{ parent() }}{% endblock %}
 
 {% block site_body %}	
-		<h1>A propos</h1>
-	<div class="row">
-		<div class="col s12">
-			<h2>Qui sommes-nous ?</h2>
-			<p>Crée depuis 2013, Ani-Grenoble est une association grenobloise intéressé par la "Culture Populaire Japonaise". Elle est essentiellement constituée d'étudiants passionnés.</p>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col s12">
-			<h2>Que faisons-nous ?</h2>
-			<p>Durant nos réunions hebdomadaire de 2 heures nous regardons des Animes ensemble sur grand écran généralement en japonais avec des sous-titres en français soit en anglais. Par la suite nous faisons d'autres activités en réstant, biensûr, sur le thème du Japon tels que :</p>
-			
-        	<div class="card-image">
-          		<img src="https://lh5.ggpht.com/CfLSYTQZ776-LsbZw0Ycn3_3UGNeH6jcs5G96bVxVp9BE4tFHy6drB-pNT4z2C3nw_A=w300">
-          		<span class="card-title">Quizz</span>
-        	</div>
-		
-        	<div class="card-image">
-          		<img src="http://orig03.deviantart.net/b6c1/f/2015/247/9/0/danshi_koukousei_no_nichijou_presentation_by_yusatsunao-d98b95j.png">
-          		<span class="card-title">Présentation/exposés</span>
-        	</div>
-        
-        	<div class="card-image">
-          		<img src="http://ak2.polyvoreimg.com/cgi/img-set/cid/165324722/id/uJuKZeoX5RGxtr5ttfvecw/size/y.jpg">
-          		<span class="card-title">Cosplay</span>
-        	</div>
-        
-        	<div class="card-image">
-          		<img src="http://animefanatika.co.za/afwp/wp-content/uploads/2015/12/karakoke-crazy.jpg">
-          		<span class="card-title">karaoke</span>
-        	</div>
-        
-        	<div class="card-image">
-          		<img src="http://www.zoids-anime.net/wp-content/uploads/2014/10/anime-games.jpg">
-          		<span class="card-title">Jeux vidéos japonais</span>
-        	</div>
-        
-        	<div class="card-image">
-          		<img src="https://i.ytimg.com/vi/92Ov2OxkpPE/maxresdefault.jpg">
-          		<span class="card-title">Visual Novel</span>
-        	</div>	            
-		</div>
-	</div>
-	<div class="row">
-	<p>Nous sommes ouvert à toutes personnes quelles soient étudiante ou non et si cela vous intéresse, n'hésitez pas à <a href="#">nous rejoindre!</a></p>
-	<p>Les membres de l'ANI Grenoble. </p>
-	</div>
+  <h1>A propos</h1>
 
+  <div class="back-ground-blanc">
+  	<div class="row">
+  		<div class="col s12">
+  			<h2>Qui sommes-nous ?</h2>
+  			<p>Crée depuis 2013, ANI Grenoble est une association grenobloise intéressé par la "Culture Populaire Japonaise". Elle est essentiellement constituée d'étudiants qui partagent leur passion durant les réunions hébdomadaires ou les soirées spéciales.</p>
+  		</div>
+  	</div>
+  	<div class="row">
+  		<div class="col s12">
+  			<h2>Que faisons-nous ?</h2>
+        <div class="row reunions-hebdomadaire-a-propos">
+          <h3> Les réunions hébdomadaires</h3>
+    			<p>Les réunions hébdomadaires se font une fois par semaine en fin d'après midi et durent 2 heures environ. Vous pouvais retrouver la <b>date de la prochaine réunion sur <a target="_blank" href="https://www.facebook.com/groups/226434010895190/">notre page facebook</a></b> ainsi que le détail de se qu'il s'est passé. Vous pouvaiez également retrouver se détail sur la page d'<a href="{{ path('ani_grenoble_app_homepage') }}">accueil du site</a>.</p>
+          <p>Généralement, nous regardons deux <b>épisodes d'animes</b> ensemble sur grand écran généralement en japonais avec des sous-titres en français soit en anglais. Par la suite, nous faisons d'autres activités en réstant, biensûr, sur le thème du Japon :</p>
+          <div class="activites-a-propos">
+            <div class="row">
+              <div class="col s4">
+                  <p class="card-title">Quizz</p>
+              		<img alt="ani grenoble blind test" src="{{ asset('image/ani_grenoble_quizz.png') }}">
+              </div>
+              <div class="col s4">
+                  <p class="card-title">Présentations/exposés</p>
+              		<img alt="ani grenoble presentations exposés" src="{{ asset('image/ani_grenoble_presentations_exposes.png') }}">
+              </div>
+              <div class="col s4">        
+                  <p class="card-title">Cosplay</p>
+              		<img alt="ani grenoble cosplay" src="{{ asset('image/ani_grenoble_cosplay.jpg') }}">
+              </div>
+            </div>
+            <div class="row">          
+            	<div class="col s4">
+                  <p class="card-title">Karaoke</p>
+                	<img alt="ani grenoble karaoke" src="{{ asset('image/ani_grenoble_karaoke.jpg') }}">
+            	</div>            
+            	<div class="col s4">
+                  <p class="card-title">Jeux vidéos japonais</p>
+                	<img alt="ani grenoble jeux vidéos japonais" src="{{ asset('image/ani_grenoble_jeux_videos_japonais.jpg') }}">
+            	</div>            
+            	<div class="col s4">
+                  <p class="card-title">Visual Novel</p>
+                	<img alt="ani grenoble visual novel" src="{{ asset('image/ani_grenoble_visual_novel.jpg') }}">
+              </div>
+            </div>
+          </div>  
+        </div>
+        <div class="row">
+          <h3> Les soirées spéciales</h3>
+          <p>Pendant l'année, nous faisait des soirées spéciales avec un thème en rapport avec le Japon défini à l'avance. L'entrée est ouvertes à toutes personnes souhaitant y participer en échage d'une petite participation monétaire :)</p>
+          <p>Durant les soirés nous vous proposont de participer à de nombreux jeux tel ques <b>des blind test, des time-up ou encore un concours de cosplay</b> en liens avec le thème. Les dates des soirées sont communiqués sur notre site web et <a target="_blank" href="https://www.facebook.com/groups/226434010895190/">notre page facebook</a>.</p>
+          <div class="row soiree-a-propos">
+            <p>Les affiches ne nos soirées :</p>
+            <div class="col s4">        
+              <img class="materialboxed" alt="affiche-soirée-ani-grenoble-09-05-2016"src="{{ asset('image/affiche/ani_grenoble_affiche_09_05_2016.png') }}">
+            </div>
+          </div>
+        </div>
+  		</div>
+  	</div>
+  	<div class="row derniere-row-a-propos">
+      <p>Nous sommes ouvert à toutes personnes quelles soient étudiante ou non et si cela vous intéresse, n'hésitez pas à <a href="#">nous rejoindre!</a></p>
+        <p>Les membres de l'ANI Grenoble. </p>
+  	</div>
+  </div>
 {% endblock %}

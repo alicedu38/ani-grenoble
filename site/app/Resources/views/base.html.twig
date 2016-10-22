@@ -25,7 +25,7 @@
         <div class="container">
             <nav>
                 <div class="nav-wrapper">
-                    <a class="brand-logo" href="{{ path('ani_grenoble_app_homepage') }}"><img src="{{ asset('image/ani-grenoble.jpg') }}"></a>
+                    <a class="brand-logo" href="{{ path('ani_grenoble_app_homepage') }}"><img src="{{ asset('image/ani_grenoble.jpg') }}"></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
                     <ul class="right hide-on-med-and-down">                      
@@ -76,10 +76,26 @@
             {% block body %}
             {% endblock %}
 
-            <hr>
-
-            <footer>
-                <p>Copyright © {{ 'now'|date('Y') }}. Tous droits réservés</p>
+            <footer class="page-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <h5 class="white-text">Footer Content</h5>
+                            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                        </div>
+                    <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Plan du site</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_app_a_propos') }}">A propos</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                        <li><a class="grey-text text-lighten-3" href="{{ path('fos_user_security_login') }}">Connexion</a></li>
+                    </ul>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container center-align">
+                        Copyright © {{ 'now'|date('Y') }}. Tous droits réservés
+                    </div>
+                </div>
             </footer>
         </div>
         {% block javascripts %}
@@ -96,5 +112,10 @@
             $('input.date-date').prop('type', 'date');
             $(".label_publie").before($(".checkbox_publie"));
         }
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.materialboxed').materialbox();
+        });
     </script>
 </html>
