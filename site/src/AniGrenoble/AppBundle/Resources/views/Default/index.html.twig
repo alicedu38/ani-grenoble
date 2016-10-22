@@ -5,48 +5,62 @@
 {% block head %}{{ parent() }}{% endblock %}
 
 {% block site_body %}
-<p>Hello World!</p>
-{% for AnnonceEvenement in listeAnnoncesEvenement %}
+<h1>Bienvenue chez ANI Grenoble,</h1>
+<h2 class="h2-index">le club anime des Universités de Grenoble !</h2>
+<div class="back-ground-blanc">
+  {% for AnnonceEvenement in listeAnnoncesEvenement %}
+    <div class="row">
+      <div class="col m12">
+        <div class="card horizontal hoverable">
+          <div class="card-image">
+            <img src="{{ AnnonceEvenement.image.url }}">
+          </div>
+          <div class="card-stacked">
+            <div class="card-content">
+              <p>{{ AnnonceEvenement.contenu }}</p>
+            </div>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <div class="card-action">
+              <a href="{{ path('ani_grenoble_app_annonce_edit', {'id': AnnonceEvenement.id}) }}">Modifier</a>
+              <a href="#">Suprrimer</a>
+            </div>
+          {% endif %}
+          </div>
+  		</div>
+      </div>
+  {% else %}
+    <li>Pas (encore !) d'evenement</li>
+  {% endfor %}
+
   <div class="row">
-    <div class="col m12">
-      <h2 class="header">{{ AnnonceEvenement.titre }}</h2>
-      <div class="card horizontal">
-        <div class="card-image">
-          <img src="http://lorempixel.com/100/190/nature/6">
-        </div>
-        <div class="card-stacked">
+    {% for AnnonceReunionHebdomadaire in listeAnnoncesReunionHebdomadaire %}
+      <div class="col m3">
+        <div class="card small sticky-action hoverable">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="{{ AnnonceReunionHebdomadaire.image.url }}" alt="{{ AnnonceReunionHebdomadaire.image.alt }}">
+          </div>
           <div class="card-content">
-            <p>{{ AnnonceEvenement.contenu }}</p>
+            <span class="card-title activator grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre }}<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">This is a link</a></p>
+          </div>
+          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <div class="card-action">
+              <a href="{{ path('ani_grenoble_app_annonce_edit', {'id': AnnonceReunionHebdomadaire.id}) }}">Modifier</a>
+              <a href="#">Suprrimer</a>
+            </div>
+          {% endif %}  
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre }}<i class="material-icons right">close</i></span>
+            <p>{{ AnnonceReunionHebdomadaire.contenu }}</p>
+            <p>par {{ AnnonceReunionHebdomadaire.auteur }},</p>
+            <p>le {{ AnnonceReunionHebdomadaire.date|date('d/m/Y') }}</p>
           </div>
         </div>
-		</div>
-    </div>
-{% else %}
-  <li>Pas (encore !) d'evenement</li>
-{% endfor %}
-
-<div class="row">
-  {% for AnnonceReunionHebdomadaire in listeAnnoncesReunionHebdomadaire %}
-    <div class="col m4">
-      <div class="card small">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator" src="{{ AnnonceReunionHebdomadaire.image.url }}" alt="{{ AnnonceReunionHebdomadaire.image.alt }}">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre }}<i class="material-icons right">more_vert</i></span>
-          <p><a href="#">This is a link</a></p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre }}<i class="material-icons right">close</i></span>
-          <p>{{ AnnonceReunionHebdomadaire.contenu }}</p>
-          <p>par {{ AnnonceReunionHebdomadaire.auteur }},</p>
-          <p>le {{ AnnonceReunionHebdomadaire.date|date('d/m/Y') }}</p>
-        </div>
       </div>
-    </div>
-  {% else %}
-    <li>Pas (encore !) d'annonce</li>
-  {% endfor %}
+    {% else %}
+      <li>Pas (encore !) d'annonce</li>
+    {% endfor %}
+  </div>
 </div>
 
 {% endblock %}

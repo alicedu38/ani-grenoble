@@ -13,30 +13,27 @@
             <!--Import jQuery before materialize.js-->
             <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
             <!-- Compiled and minified JavaScript -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>            
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+
         {% endblock %}
+        {% stylesheets 'css/custom.css' %}
+            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+        {% endstylesheets %}
         
     </head>
     <body>
         <div class="container">
             <nav>
                 <div class="nav-wrapper">
-                    <a class="brand-logo" href="{{ path('ani_grenoble_app_homepage') }}">Ani-Grenoble</a>
+                    <a class="brand-logo" href="{{ path('ani_grenoble_app_homepage') }}"><img src="{{ asset('image/ani-grenoble.jpg') }}"></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
+
+                    <ul class="right hide-on-med-and-down">                      
+                        <li>
+                            <a class="nav-link" href="{{ path('ani_grenoble_app_a_propos') }}">A propos</a>
+                        </li>
                         <!-- On n'affiche le lien qu'au utilisateur abilités -->
-                        {% if is_granted('ROLE_SUPER_ADMIN') %}
-                            <li>
-                                <a class="nav-link" href="{{ path('fos_user_registration_register') }}">Ajouter un utilisateur</a>
-                            </li>
-                        {% endif %}
-                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                            <li>
-                                <a class="nav-link" href="{{ path('ani_grenoble_app_annonce_add') }}">Ajouter un article<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{ path('fos_user_change_password') }}">Change mot de passe</a>
-                            </li>                            
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}                            
                             <li>
                                 <a class="nav-link" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
                             </li>
@@ -46,25 +43,9 @@
                             </li>
                         {% endif %}                       
                     </ul>
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <p class="right hide-on-med-and-down">
-                            Bonjour {{ app.user.username }}
-                        </p>
-                    {% endif %}
                     <ul class="side-nav" id="mobile-demo">
                         <!-- On n'affiche le lien qu'au utilisateur abilités -->
-                        {% if is_granted('ROLE_SUPER_ADMIN') %}
-                            <li>
-                                <a class="nav-link" href="{{ path('fos_user_registration_register') }}">Ajouter un utilisateur<span class="sr-only">(current)</span></a>
-                            </li>
-                        {% endif %}
-                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                            <li>
-                                <a class="nav-link" href="{{ path('ani_grenoble_app_annonce_add') }}">Ajouter un article<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li>
-                                <a class="nav-link" href="{{ path('fos_user_change_password') }}">Change mot de passe</a>
-                            </li>                            
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}                         
                             <li>
                                 <a class="nav-link" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
                             </li>
@@ -72,16 +53,25 @@
                             <li>
                                 <a class="nav-link" href="{{ path('fos_user_security_login') }}">Connexion</a>
                             </li>
-                        {% endif %} 
-                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        <p class="">
-                            Bonjour {{ app.user.username }}
-                        </p>
-                    {% endif %}
-                    </ul>
-                        
+                        {% endif %}                         
+                    </ul>                        
                 </div>
             </nav>
+
+            <div class="card-panel pink lighten-5">
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <p class="">Bonjour {{ app.user.username }}.                    
+                {% endif %}
+                {% if is_granted('ROLE_SUPER_ADMIN') %}                   
+                    <a class="nav-link" href="{{ path('fos_user_registration_register') }}">Ajouter un utilisateur<span class="sr-only">(current)</span></a> |
+                {% endif %}
+                {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}                    
+                    <a class="nav-link" href="{{ path('ani_grenoble_app_annonce_add') }}">Ajouter un article<span class="sr-only">(current)</span></a> |
+                    <a class="nav-link" href="{{ path('fos_user_change_password') }}">Change mot de passe</a>
+                    </p>
+                    
+                {% endif %} 
+            </div>
 
             {% block body %}
             {% endblock %}

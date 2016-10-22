@@ -2,11 +2,15 @@ ani_grenoble_app_homepage:
     path:     /
     defaults: { _controller: AniGrenobleAppBundle:Default:index }
 
-ani_grenoble_app_annonce_view:
-    path:     /annonce/{id}
-    defaults: { _controller: AniGrenobleAppBundle:Default:view }
-    requirements:
-        id: \d*
+ani_grenoble_app_a_propos:
+    path:     /a-propos
+    defaults: { _controller: AniGrenobleAppBundle:Default:a_propos }
+
+#ani_grenoble_app_annonce_view:
+    #path:     /annonce/{id}
+    #defaults: { _controller: AniGrenobleAppBundle:Default:view }
+    #requirements:
+        #id: \d*
 
 ani_grenoble_app_annonce_add:
     path:      /add
