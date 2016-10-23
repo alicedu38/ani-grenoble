@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Symfony\Component\HttpFoundation\Request;
 use AniGrenoble\AppBundle\Entity\Annonce;
 use AniGrenoble\AppBundle\Form\AnnonceType;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class DefaultController extends Controller
 {
@@ -119,8 +120,40 @@ class DefaultController extends Controller
         ));
     }
 
-    public function deleteAction()
+    public function deleteAction($id, Request $request)
     {
-        return $this->render('AniGrenobleAppBundle:Default:delete.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $annonce = $em->getRepository('AniGrenobleAppBundle:Annonce')->find($id);
+
+        // Si l'annonce n'existe pas, on affiche une erreur 404
+        if ($annonce === null) {
+            throw new NotFoundHttpException("L'annonce d'id ".$id." n'existe pas.");
+        }
+
+        // On crée un formulaire vide, qui ne contiendra que le champ CSRF
+        // Cela permet de protéger la suppression d'annonce contre cette faille
+        $form = $this->createFormBuilder()->getForm();
+
+        // On fait le lien Requête <-> Formulaire
+        // À partir de maintenant, la variable $annonce contient les valeurs entrées dans le formulaire par le visiteur
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            // Si la requête est en POST, on deletea l'annonce
+            $em->remove($annonce);
+            $em->flush();
+
+            $request->getSession()->getFlashBag()->add('info', 'Article bien supprimée.');
+
+            // Puis on redirige vers l'accueil
+            return $this->redirect($this->generateUrl('ani_grenoble_app_homepage', array('page' => "1")));
+        }
+
+        // Si la requête est en GET, on affiche une page de confirmation avant de delete
+        return $this->render('AniGrenobleAppBundle:Default:delete.html.twig', array(
+            'id' => $id,
+            'annonce' => $annonce,
+            'form'   => $form->createView()
+        ));
     }
 }
