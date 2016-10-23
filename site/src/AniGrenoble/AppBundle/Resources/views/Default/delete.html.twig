@@ -1,0 +1,27 @@
+{% extends "AniGrenobleAppBundle:Include:layout.html.twig" %}
+
+{% block title %}Accueil - {{ parent() }}{% endblock %}
+
+{% block head %}{{ parent() }}{% endblock %}
+
+{% block site_body %}
+<h2>Supprimer une annonce</h2>
+  <div class="back-ground-blanc">
+    <p>
+      Etes-vous certain de vouloir supprimer l'annonce "{{ annonce.titre }}" ?
+    </p>
+
+    {# On met l'id de l'annonce dans la route de l'action du formulaire pour retourner au controller delete et supprimer l'annonce#}
+    <form action="{{ path('ani_grenoble_app_annonce_delete', {'id': annonce.id}) }}" method="post">
+      <a href="{{ path('ani_grenoble_app_homepage', {'id': annonce.id}) }}" class="btn btn-default">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Annuler
+      </a>
+      {# Ici j'ai écrit le bouton de soumission à la main #}
+      <input type="submit" value="Supprimer" class="btn btn-danger" />
+      {# Ceci va générer le champ CSRF #}
+      {{ form_rest(form) }}
+    </form>
+  </div>
+
+{% endblock %}

@@ -1,7 +1,9 @@
 /*------Css general------*/
 body{
-	background-image: url('/ani-grenoble/site/web/image/Background_Haut.png');
-	background-size: contain;
+	background-image: url('/ani-grenoble/site/web/image/Background_Haut.png'),
+	url('/ani-grenoble/site/web/image/Background_Bas.png');
+	background-repeat: no-repeat, repeat;
+	background-size: contain, contain;
 }
 
 h1{
@@ -37,6 +39,17 @@ a:hover{
 	padding: 20px 40px;
 }
 
+@media only screen and (max-width: 450px){
+	.back-ground-blanc{
+		padding: 20px 0px;
+	}
+
+	.container .row {
+    	margin-left: 0rem;
+    	margin-right: 0rem;
+	}
+}
+
 /*------Page accueil------*/
 .nav-wrapper ul.hide-on-med-and-down a{
 	color: #ffffff;
@@ -66,26 +79,48 @@ a:hover{
 	margin-bottom: 10px;
 }
 
+.card .card-title {
+    font-size: 18px;
+}
+
 
 /*------A-propos------*/
-.activites-a-propos img, .soiree-a-propos img{
+.qui-sommes-nous-a-propos .phrase-japonnaise{
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+.activites-reunions-hebdomadaires-a-propos img, .affiches-soirees-speciales-a-propos img{
 	width: 80%;
     height: auto;
 }
 
-.activites-a-propos{
+.activites-reunions-hebdomadaires-a-propos{
 	text-align: center;
 	padding-top: 10px;
 }
 
-.activites-a-propos p{
+.activites-reunions-hebdomadaires-a-propos p{
 	font-size: 1.1rem;
 	letter-spacing: 1px;
     font-weight: bold;
 }
 
-.reunions-hebdomadaire-a-propos, .derniere-row-a-propos{
+.reunions-hebdomadaires-a-propos, .derniere-row-a-propos{
 	background-color: #f1f1f1;
 	padding: 20px 20px;
 	margin-bottom: 40px;
+}
+
+.affiches-soirees-speciales-a-propos{
+	padding-top: 20px;
+}
+
+.affiches-soirees-speciales-a-propos p{
+	text-align: center;
+}
+
+
+/*------Footer------*/
+footer.page-footer {
+    margin-top: 0px;
 }
