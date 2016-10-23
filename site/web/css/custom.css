@@ -34,6 +34,10 @@ a:hover{
 	color: #EE6E73;
 }
 
+footer.page-footer {
+    margin-top: 0px;
+}
+
 .back-ground-blanc{
 	background-color: #ffffff;
 	padding: 20px 40px;
@@ -120,7 +124,18 @@ a:hover{
 }
 
 
-/*------Footer------*/
-footer.page-footer {
-    margin-top: 0px;
+/*------Contact------*/
+.google-maps {
+    position: relative;
+    padding-bottom: 75%; // This is the aspect ratio
+    height: 0;
+    overflow: hidden;
+}
+
+.google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 50% !important;
 }

@@ -32,6 +32,9 @@
                         <li>
                             <a class="nav-link" href="{{ path('ani_grenoble_app_a_propos') }}">A propos</a>
                         </li>
+                        <li>
+                            <a class="nav-link" href="{{ path('ani_grenoble_app_contact') }}">Contact</a>
+                        </li>
                         <!-- On n'affiche le lien qu'au utilisateur abilités -->
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}                            
                             <li>
@@ -44,6 +47,12 @@
                         {% endif %}                       
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
+                        <li>
+                            <a class="nav-link" href="{{ path('ani_grenoble_app_a_propos') }}">A propos</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{ path('ani_grenoble_app_contact') }}">Contact</a>
+                        </li>
                         <!-- On n'affiche le lien qu'au utilisateur abilités -->
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}                         
                             <li>

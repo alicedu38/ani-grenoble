@@ -35,6 +35,11 @@ class DefaultController extends Controller
         return $this->render('AniGrenobleAppBundle:Default:a_propos.html.twig');
     }
 
+    public function contactAction()
+    {
+        return $this->render('AniGrenobleAppBundle:Default:contact.html.twig');
+    }
+
     /*public function viewAction()
     {
         return $this->render('AniGrenobleAppBundle:Default:view.html.twig');
