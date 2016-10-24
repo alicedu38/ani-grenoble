@@ -109,21 +109,7 @@
         {% block javascripts %}
         {% endblock %}
     </body>
-    <script type="text/javascript">
-        $( document ).ready(function(){
-            $(".button-collapse").sideNav(); 
-            $('.materialboxed').materialbox();
-            width =$(document).width();
-            if (width <= 600) {
-                $(".div-evenement div.hoverable").attr('class', 'card vertical hoverable');
-            };
-        })
-    </script>
-    <script type="text/javascript">
-        if ($(".form")[0]){  
-            $('input.date-date').removeAttr("type");
-            $('input.date-date').prop('type', 'date');
-            $(".label_publie").before($(".checkbox_publie"));
-        }
-    </script>
+    {% stylesheets 'js/app.js' %}
+        <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endstylesheets %}
 </html>
