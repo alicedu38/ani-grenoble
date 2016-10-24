@@ -43,6 +43,11 @@ footer.page-footer {
 	padding: 20px 40px;
 }
 
+.lien-facebook-footer img{
+	width: 40px;
+	height: auto;
+}
+
 @media only screen and (max-width: 450px){
 	.back-ground-blanc{
 		padding: 20px 0px;
@@ -54,7 +59,7 @@ footer.page-footer {
 	}
 }
 
-/*------Page accueil------*/
+/*------nav barre------*/
 .nav-wrapper ul.hide-on-med-and-down a{
 	color: #ffffff;
 }
@@ -63,14 +68,16 @@ footer.page-footer {
 	color: #f9f9f9;
 }
 
-.card-action a{
-	color: #EE6E73 !important;
+.nav-wrapper a.button-collapse:hover{
+	color: #f9f9f9;
+	background-color: #D76368;
+	text-decoration: none;
 }
 
 .brand-logo{
 	position: relative !important;
     width: 160px;
-    top: -6px;
+    top: 2px;
     left: 2px;
 }
 
@@ -79,12 +86,18 @@ footer.page-footer {
 	height:auto;
 }
 
+
+/*------Page accueil------*/
 .div-evenement{
 	margin-bottom: 10px;
 }
 
 .card .card-title {
     font-size: 18px;
+}
+
+.card-action a{
+	color: #EE6E73 !important;
 }
 
 
@@ -127,7 +140,7 @@ footer.page-footer {
 /*------Contact------*/
 .google-maps {
     position: relative;
-    padding-bottom: 75%; // This is the aspect ratio
+    padding-bottom: 35%; // This is the aspect ratio
     height: 0;
     overflow: hidden;
 }
@@ -137,5 +150,5 @@ footer.page-footer {
     top: 0;
     left: 0;
     width: 100% !important;
-    height: 50% !important;
+    height: 100% !important;
 }
