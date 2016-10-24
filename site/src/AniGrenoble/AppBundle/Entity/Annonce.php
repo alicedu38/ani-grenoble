@@ -32,8 +32,8 @@ class Annonce
      * @Assert\Length(
      *      min = 4,
      *      max = 80,
-     *      minMessage = "Le titre de l'article doit faire {{ limit }} caractères mini",
-     *      maxMessage = "Le titre de l'article doit faire {{ limit }} caractères maxi"
+     *      minMessage = "Le titre de l'article doit faire {{ limit }} caractères mini.",
+     *      maxMessage = "Le titre de l'article doit faire {{ limit }} caractères maxi."
      * )
      */
     private $titre;
@@ -53,8 +53,8 @@ class Annonce
      * @Assert\Length(
      *      min = 2,
      *      max = 30,
-     *      minMessage = "Nom de l'auteur doit faire {{ limit }} caractères mini",
-     *      maxMessage = "Nom de l'auteur doit faire {{ limit }} caractères maxi"
+     *      minMessage = "Nom de l'auteur doit faire {{ limit }} caractères mini.",
+     *      maxMessage = "Nom de l'auteur doit faire {{ limit }} caractères maxi."
      * )
      */
     private $auteur;

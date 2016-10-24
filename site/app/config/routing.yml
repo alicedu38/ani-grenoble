@@ -1,3 +1,7 @@
+ani_grenoble_contact:
+    resource: "@AniGrenobleContactBundle/Resources/config/routing.yml"
+    prefix:   /
+
 ani_grenoble_utilisateur:
     resource: "@AniGrenobleUtilisateurBundle/Resources/config/routing.yml"
     prefix:   /

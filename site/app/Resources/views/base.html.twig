@@ -5,27 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>{% block title %}{% endblock %}</title>
         {% block stylesheets %}
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">         
+            
             <!--Import Google Icon Font-->
-            <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-            <!-- Compiled and minified CSS -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-            <!--Import jQuery before materialize.js-->
-            <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-            <!-- Compiled and minified JavaScript -->
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+            <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">         
+            {% stylesheets 'css/custom.css''css/materialize.min.css'%}
+                <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
+            {% endstylesheets %}
 
         {% endblock %}
-        {% stylesheets 'css/custom.css' %}
-            <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
-        {% endstylesheets %}
+        
         
     </head>
     <body>
         <div class="container">
             <nav>
                 <div class="nav-wrapper">
-                    <a class="brand-logo" href="{{ path('ani_grenoble_app_homepage') }}"><img src="{{ asset('image/ani_grenoble.jpg') }}"></a>
+                    <a class="brand-logo" href="{{ path('ani_grenoble_app_homepage') }}"><img alt="ani grenoble"src="{{ asset('image/ani_grenoble.jpg') }}"></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
                     <ul class="right hide-on-med-and-down">                      
@@ -33,7 +28,7 @@
                             <a class="nav-link" href="{{ path('ani_grenoble_app_a_propos') }}">A propos</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{{ path('ani_grenoble_app_contact') }}">Contact</a>
+                            <a class="nav-link" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a>
                         </li>
                         <!-- On n'affiche le lien qu'au utilisateur abilités -->
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}                            
@@ -51,7 +46,7 @@
                             <a class="nav-link" href="{{ path('ani_grenoble_app_a_propos') }}">A propos</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{{ path('ani_grenoble_app_contact') }}">Contact</a>
+                            <a class="nav-link" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a>
                         </li>
                         <!-- On n'affiche le lien qu'au utilisateur abilités -->
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}                         
@@ -86,14 +81,15 @@
                 <div class="container">
                     <div class="row">
                         <div class="col l6 s12">
-                            <h5 class="white-text">Footer Content</h5>
-                            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                            <h5 class="white-text">Nous rejoindre</h5>
+                            <a class="lien-facebook-footer" target="_blank" href="https://www.facebook.com/groups/226434010895190/"><img alt="ani grenoble facebook" src="{{ asset('image/ani_grenoble_facebook.svg') }}"></a>
+                            <p class="grey-text text-lighten-4">Ne faites pas vos Hikikomori, rejoinez-nous !</p>
                         </div>
                         <div class="col l4 offset-l2 s12">
                             <h5 class="white-text">Plan du site</h5>
                             <ul>
                                 <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_app_a_propos') }}">A propos</a></li>
-                                <li><a class="grey-text text-lighten-3" href="#!">Contact</a></li>
+                                <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a></li>
                                 <li><a class="grey-text text-lighten-3" href="{{ path('fos_user_security_login') }}">Connexion</a></li>
                             </ul>
                         </div>
@@ -109,7 +105,7 @@
         {% block javascripts %}
         {% endblock %}
     </body>
-    {% stylesheets 'js/app.js' %}
+    {% stylesheets 'js/jquery-3.1.1.min.js''js/materialize.min.js''js/app.js' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endstylesheets %}
 </html>

@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new AniGrenoble\UtilisateurBundle\AniGrenobleUtilisateurBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
+            new AniGrenoble\ContactBundle\AniGrenobleContactBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

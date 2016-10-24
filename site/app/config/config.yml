@@ -8,6 +8,7 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    blogger_blog.emails.contact_email: "%mailer_user%"
 
 framework:
     #esi:             ~
@@ -78,4 +79,10 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+
+#Configuration mail
+swiftmailer:
+   transport: gmail
+   username:  halibeldu38@gmail.com
+   password:  chatchat
 

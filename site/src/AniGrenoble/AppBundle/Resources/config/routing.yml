@@ -6,9 +6,9 @@ ani_grenoble_app_a_propos:
     path:     /a-propos
     defaults: { _controller: AniGrenobleAppBundle:Default:a_propos }
 
-ani_grenoble_app_contact:
+ani_grenoble_contact_contact:
     path:     /contact
-    defaults: { _controller: AniGrenobleAppBundle:Default:contact }
+    defaults: { _controller: AniGrenobleContactBundle:Default:contact }
 
 #ani_grenoble_app_annonce_view:
     #path:     /annonce/{id}
