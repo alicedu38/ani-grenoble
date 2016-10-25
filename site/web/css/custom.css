@@ -126,6 +126,10 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	color: #EE6E73 !important;
 }
 
+.card .card-content .card-title {
+    line-height: 1.5;
+}
+
 
 /*------A-propos------*/
 .qui-sommes-nous-a-propos .phrase-japonnaise{

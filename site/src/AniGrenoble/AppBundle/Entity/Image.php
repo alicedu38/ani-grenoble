@@ -39,7 +39,11 @@ class Image
     private $alt;
 
     /**
-     * 
+     * @Assert\File(
+     *     maxSize = "1024k",
+     *     mimeTypes = {"image/png", "image/jpeg", "image/jpg", "image/gif"},
+     *     mimeTypesMessage = "Taille ou format de l'image incorrect. Max taille : 1024k, format : jepg, jpg, png, gif."
+     * ) 
      */
     private $file;
 

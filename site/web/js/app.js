@@ -1,7 +1,8 @@
 $( document ).ready(function(){
     $(".button-collapse").sideNav(); //Barre menu mobile
     $('.materialboxed').materialbox();//Effet d'ombres hover les elements page index
-    $( "span" ).remove( ".sr-only" );//Suprrime span dans bar des droits
+    $( "span" ).remove( ".sr-only" );//Suprrime span dans bar des droits utilisateurs
+    $( ".connexion form label:nth-child(7)" ).remove( "label" );//Suppriem remember me (se souvenir de moi) de form de connexion
     
     width =$(document).width();//Responsive cadre evenement (horizontal ->vertical)
     if (width <= 600) {
