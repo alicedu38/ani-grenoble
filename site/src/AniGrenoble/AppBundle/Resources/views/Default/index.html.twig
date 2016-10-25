@@ -17,7 +17,7 @@
           </div>
           <div class="card-stacked">
             <div class="card-content">
-              <p>{{ AnnonceEvenement.contenu }}</p>
+              <p>{{ AnnonceEvenement.contenu|nl2br }}</p>
             </div>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
               <div class="card-action">
@@ -42,7 +42,7 @@
             <img class="activator" src="{{ AnnonceReunionHebdomadaire.image.url }}" alt="{{ AnnonceReunionHebdomadaire.image.alt }}">
           </div>
           <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre }}<i class="material-icons right">more_vert</i></span>
+            <span class="card-title activator grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre|capitalize }}<i class="material-icons right">more_vert</i></span>
           </div>
           {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
             <div class="card-action">
@@ -51,8 +51,8 @@
             </div>
           {% endif %}  
           <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre }}<i class="material-icons right">close</i></span>
-            <p>{{ AnnonceReunionHebdomadaire.contenu }}</p>
+            <span class="card-title grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre|capitalize }}<i class="material-icons right">close</i></span>
+            <p>{{ AnnonceReunionHebdomadaire.contenu|capitalize |nl2br}}</p>
             <p>par {{ AnnonceReunionHebdomadaire.auteur }},</p>
             <p>le {{ AnnonceReunionHebdomadaire.date|date('d/m/Y') }}</p>
           </div>

@@ -4,17 +4,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>{% block title %}{% endblock %}</title>
-        {% block stylesheets %}
-            
+        {% block stylesheets %}          
             <!--Import Google Icon Font-->
             <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">         
-            {% stylesheets 'css/custom.css''css/materialize.min.css'%}
+            {% stylesheets 'css/materialize.min.css' 'css/custom.css'%}
                 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
             {% endstylesheets %}
-
-        {% endblock %}
-        
-        
+        {% endblock %}               
     </head>
     <body>
         <div class="container">
@@ -83,7 +79,7 @@
                         <div class="col l6 s12">
                             <h5 class="white-text">Nous rejoindre</h5>
                             <a class="lien-facebook-footer" target="_blank" href="https://www.facebook.com/groups/226434010895190/"><img alt="ani grenoble facebook" src="{{ asset('image/ani_grenoble_facebook.svg') }}"></a>
-                            <p class="grey-text text-lighten-4">Ne faites pas vos Hikikomori, rejoinez-nous !</p>
+                            <p class="grey-text text-lighten-4">Ne faites pas vos Hikikomori et rejoinez-nous !</p>
                         </div>
                         <div class="col l4 offset-l2 s12">
                             <h5 class="white-text">Plan du site</h5>

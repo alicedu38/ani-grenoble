@@ -30,12 +30,30 @@ a{
 	text-decoration: none;
 }
 
+a.btn-secondary:hover{
+	color: #ffffff;
+}
+
 a:hover{
-	color: #EE6E73;
+	color: #ef8689;
 }
 
 footer.page-footer {
     margin-top: 0px;
+}
+
+input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=date]:focus:not([readonly]){
+	border-bottom: 1px solid #EE6E73;
+	box-shadow: 0 1px 0 0 #EE6E73;
+}
+
+input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([readonly])+label, input[type=email]:focus:not([readonly])+label, input[type=date]:focus:not([readonly])+label{
+	color: #EE6E73;
+}
+
+[type="checkbox"]:checked+label:before{
+	border-right: 2px solid #EE6E73;
+    border-bottom: 2px solid #EE6E73;
 }
 
 .back-ground-blanc{
@@ -46,6 +64,14 @@ footer.page-footer {
 .lien-facebook-footer img{
 	width: 40px;
 	height: auto;
+}
+
+.btn{
+	background-color: #EE6E73;
+}
+
+.btn:hover{
+	background-color: #ef8689;
 }
 
 @media only screen and (max-width: 450px){
@@ -75,7 +101,7 @@ footer.page-footer {
 }
 
 .brand-logo{
-	position: relative !important;
+	position: relative;
     width: 160px;
     top: 2px;
     left: 2px;
@@ -151,4 +177,40 @@ footer.page-footer {
     left: 0;
     width: 100% !important;
     height: 100% !important;
+}
+
+.contact p.explication-contact{
+	text-align: center;
+	margin: 30px 0px;
+}
+
+.coordonnes-contact{
+	width: 40%;
+	float: left;
+	padding-right: 10px;
+}
+
+.formulaire-contact-contact{
+	width: 60%;
+	float: right;
+	padding-left: 10px;
+}
+
+.titre-coordonnes-contact{
+	font-size: 18px;
+}
+
+@media only screen and (max-width: 600px){
+	.coordonnes-contact{
+		width: 100%;
+		float: none;
+		margin-bottom: 60px;
+		padding-right: 0px;
+	}
+
+	.formulaire-contact-contact{
+		width: 100%;
+		float: none;
+		padding-left: 0px;
+	}
 }
