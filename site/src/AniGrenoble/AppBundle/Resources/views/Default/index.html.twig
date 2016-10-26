@@ -11,7 +11,7 @@
 {% block site_body %}
   {{ parent() }}
   <h1>Bienvenue chez ANI Grenoble,</h1>
-  <h2 class="h2-index">le club anime des Universités de Grenoble !</h2>
+  <p class="p-titre-index">le club anime des Universités de Grenoble !</p>
   <div class="back-ground-blanc">
     {% for AnnonceEvenement in listeAnnoncesEvenement %}
       <div class="row">
@@ -34,11 +34,10 @@
           </div>
     		</div>
       </div>
-    {% else %}
-      <li>Pas (encore !) d'evenement</li>
     {% endfor %}
 
     <div class="row">
+      <h2>Bilan des réunions hébdomadaires</h2>
       <p>Chaque semaines nous nous retrouvons autour d'animés, blind test, exposés et autres activités en lien avec la culture populaire du Japon.</p>
       <div class="blian-index">
         <p>Retrouvez ci-dessous les blians de nos réunions hebdomadaires :</p>

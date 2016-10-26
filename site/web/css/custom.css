@@ -20,7 +20,7 @@ h3{
 	font-size: 1.80rem;
 }
 
-h2.h2-index{
+p.p-titre-index{
 	font-size: 1.8rem;
 	text-align: center;
 }
@@ -36,6 +36,15 @@ a.btn-secondary:hover{
 
 a:hover{
 	color: #ef8689;
+}
+
+hr{
+	width: 50px;
+	text-align:center;
+	height: 4px;
+	background-color: #EE6E73;
+	border: 0;
+	margin-bottom: 30px;
 }
 
 footer.page-footer {
@@ -176,18 +185,13 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 .qui-sommes-nous-a-propos .col1-qui-sommes-nous-a-propos{
 	width: 50%;
 	float: left;
-	padding-right: 10px;
-}
-
-.qui-sommes-nous-a-propos .col1-qui-sommes-nous-a-propos p{
-	border-right: 4px solid #EE6E73;
-    padding-right: 20px;
+	padding-right: 15px;
 }
 
 .qui-sommes-nous-a-propos .col2-qui-sommes-nous-a-propos{
 	width: 50%;
 	float: right;
-	padding-left: 14px;
+	padding-left: 15px;
 }
 
 .activites-reunions-hebdomadaires-a-propos img, .affiches-soirees-speciales-a-propos img{
