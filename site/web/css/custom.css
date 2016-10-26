@@ -74,6 +74,22 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	background-color: #ef8689;
 }
 
+.back-to-top{
+	width: 100px; 
+	height: 100px;
+	position:fixed;
+	bottom:75px;
+	right:0px;
+	display:none;
+	background-image: url('/ani-grenoble/site/web/image/back_to_top/happy-normal.png');
+	background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.back-to-top:hover{
+	background-image: url('/ani-grenoble/site/web/image/back_to_top/happy-finger-top.png');
+}
+
 @media only screen and (max-width: 450px){
 	.back-ground-blanc{
 		padding: 20px 0px;
@@ -130,12 +146,50 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
     line-height: 1.5;
 }
 
+.blian-index p{
+	text-align: center;
+}
+
 
 /*------A-propos------*/
 .qui-sommes-nous-a-propos .phrase-japonnaise{
+	text-align: -webkit-center;
+}
+
+.qui-sommes-nous-a-propos .phrase-japonnaise-center{
+	width: 31px;
+    height: 145px;
+    margin: 0 auto;
+}
+
+.qui-sommes-nous-a-propos .phrase-japonnaise p{
 	font-size: 1.5rem;
 	font-weight: 300;
+    writing-mode: vertical-lr;
+    margin: 0;
 }
+
+.qui-sommes-nous-a-propos2{
+	display: table;
+}
+
+.qui-sommes-nous-a-propos .col1-qui-sommes-nous-a-propos{
+	width: 50%;
+	float: left;
+	padding-right: 10px;
+}
+
+.qui-sommes-nous-a-propos .col1-qui-sommes-nous-a-propos p{
+	border-right: 4px solid #EE6E73;
+    padding-right: 20px;
+}
+
+.qui-sommes-nous-a-propos .col2-qui-sommes-nous-a-propos{
+	width: 50%;
+	float: right;
+	padding-left: 14px;
+}
+
 .activites-reunions-hebdomadaires-a-propos img, .affiches-soirees-speciales-a-propos img{
 	width: 80%;
     height: auto;
@@ -166,6 +220,24 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	text-align: center;
 }
 
+@media only screen and (max-width: 600px){
+	.qui-sommes-nous-a-propos .col1-qui-sommes-nous-a-propos{
+		width: 100%;
+		float: none;
+    	padding-right: 0px;
+	}
+
+	.qui-sommes-nous-a-propos .col1-qui-sommes-nous-a-propos p{
+		border-right: none;
+	}
+
+	.qui-sommes-nous-a-propos .col2-qui-sommes-nous-a-propos{
+		width: 100%;
+		float: none;
+		padding-left: 0px;
+	}
+}
+
 
 /*------Contact------*/
 .google-maps {
@@ -183,7 +255,7 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
     height: 100% !important;
 }
 
-.contact p.explication-contact{
+.contact .explication-contact p{
 	text-align: center;
 	margin: 30px 0px;
 }

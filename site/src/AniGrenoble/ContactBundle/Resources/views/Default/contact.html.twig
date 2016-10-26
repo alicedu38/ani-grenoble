@@ -2,11 +2,15 @@
 
 {% block title %}Contact - {{ parent() }}{% endblock %}
 
-{% block head %}{{ parent() }}{% endblock %}
+{% block head %}
+  {{ parent() }}
+  <meta name="description" content="ANI Grenoble regroupe des passionnés de culture Japonnais afin de partager leurs connaissance sur les mangas, animés et bien plus encore.">
+  <meta name="keywords" content="manga, animes, Grenonle">
+{% endblock %}
 
 {% block site_body %}	
+	{{ parent() }}
 	<h1>Contact</h1>
-
 	<div class="back-ground-blanc">	
 		<div class="row">
 		  	<div class="google-maps">
@@ -14,7 +18,10 @@
 		  	</div>
 		</div>
 		<div class="row contact">
-			<p class="explication-contact">Vous pouvez nous contacter via notre page facebook ou directement par e-mail via le formulaire.</p>
+			<div class="explication-contact">
+				<p>Venez <b>discuter de mangas, karaoké et autres</b> thèmes en lien avec le Japon autour d'un animés avec nous. ANI Grenoble <b>vous accueil avec plaisir</b>.</p>
+				<p>Vous pouvez nous contacter via notre page facebook ou directement par e-mail via le formulaire.</p>
+			</div>			
 			<div class="coordonnes-contact">
 				<h4>Coordonnés</h4>
 				<p class="titre-coordonnes-contact">Horaires :</p>

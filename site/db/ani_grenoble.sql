@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Dim 23 Octobre 2016 à 19:21
+-- Généré le :  Mar 25 Octobre 2016 à 22:57
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -36,17 +36,17 @@ CREATE TABLE IF NOT EXISTS `annonce` (
   `image_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_F65593E53DA5256D` (`image_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
 
 --
 -- Contenu de la table `annonce`
 --
 
 INSERT INTO `annonce` (`id`, `titre`, `contenu`, `auteur`, `date`, `publie`, `image_id`) VALUES
-(4, 'test3', 'test3', 'Alice', '2016-10-20', 1, 3),
-(5, 'Concours de dessin de la mascotte d''Ani-grenoble', 'ANNONCE IMPORTANTE : concours de dessin pour désigner la mascotte de l''association ANI Grenoble.\r\nMagnifique affiche par Maxime qui réalise aussi les autres affiches de l''assos toutes aussi splendides :)', 'Alice', '2016-10-22', 1, 4),
+(4, 'test3', 'test3\r\nun petit retour à la ligne.', 'Alice', '2016-10-20', 1, 3),
+(5, 'Concours de dessin de la mascotte d''Ani-grenoble', 'ANNONCE IMPORTANTE : concours de dessin pour désigner la mascotte de l''association ANI Grenoble.\r\nMagnifique affiche faite par Maxime qui réalise aussi celles de l''assos et qui sont toutes aussi splendides :)', 'Alice', '2016-10-22', 1, 4),
 (6, 'Réunion du 18/10/2016', 'Bilan de ce soir :\r\n- Un-go\r\n- Berserk (1997)\r\n- Présentation très complète sur Berserk par Tom \r\n- Blindtest\r\nN''oubliez pas de participer au concours de dessin ainsi que de cotiser pour ceux qui veulent :) Prochaine réunion mercredi pro, je reposterai un message. Bonne soirée à tous ^^', 'Alice', '2016-10-22', 1, 5),
-(7, 'Réunion du 14/10/2016 blablabla bla bla blabla', 'bilan de la réunion d''hier soir : \r\n- Handa kun\r\n- Keijo (ça je pense que tout le monde a retenu le titre XD)\r\n- Débat vite fait sur la 3D dans l''animation\r\n- Karaoké\r\n- Élections (de manière démocratique mdr) des membres du bureau, à savoir le Président Tom, le Vice-Président Maxime, le Trésorier Thibault et le Secrétaire Quentin (c''est à dire moi).', 'Alice', '2016-10-14', 1, 6);
+(7, 'Réunion du 14/10/2016', 'bilan de la réunion d''hier soir : \r\n- Handa kun\r\n- Keijo (ça je pense que tout le monde a retenu le titre XD)\r\n- Débat vite fait sur la 3D dans l''animation\r\n- Karaoké\r\n- Élections (de manière démocratique mdr) des membres du bureau, à savoir le Président Tom, le Vice-Président Maxime, le Trésorier Thibault et le Secrétaire Quentin (c''est à dire moi).', 'Alice', '2016-10-14', 1, 6);
 
 -- --------------------------------------------------------
 
@@ -95,6 +95,21 @@ INSERT INTO `categorie` (`id`, `nom`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `enquiry`
+--
+
+CREATE TABLE IF NOT EXISTS `enquiry` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `sujet` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `corps` longtext COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `image`
 --
 
@@ -103,14 +118,14 @@ CREATE TABLE IF NOT EXISTS `image` (
   `url` longtext COLLATE utf8_unicode_ci,
   `alt` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `image`
 --
 
 INSERT INTO `image` (`id`, `url`, `alt`) VALUES
-(3, '/ani-grenoble/site/web/uploads/img/sports.png', '5sports.png'),
+(3, 'https://s-media-cache-ak0.pinimg.com/564x/0b/4f/69/0b4f69b21dec48877274dcb989aee14f.jpg', '5sports.png'),
 (4, '/ani-grenoble/site/web/uploads/img/ani_grenoble_concours_mascotte.jpg', 'mon image concours'),
 (5, '/ani-grenoble/site/web/uploads/img/berserk.jpg', 'berserk.jpg'),
 (6, '/ani-grenoble/site/web/uploads/img/ajin.jpg', 'ajin.jpg');
@@ -150,7 +165,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`) VALUES
-(12, 'superadmin', 'superadmin', 'superadmin@superadmin.fr', 'superadmin@superadmin.fr', 1, 'f3zu3d42cn404g4osg0cc0g044swo88', 'superadmin{f3zu3d42cn404g4osg0cc0g044swo88}', '2016-10-23 18:40:47', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}', 0, NULL);
+(12, 'superadmin', 'superadmin', 'superadmin@superadmin.fr', 'superadmin@superadmin.fr', 1, 'f3zu3d42cn404g4osg0cc0g044swo88', 'superadmin{f3zu3d42cn404g4osg0cc0g044swo88}', '2016-10-25 14:30:15', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}', 0, NULL);
 
 --
 -- Contraintes pour les tables exportées

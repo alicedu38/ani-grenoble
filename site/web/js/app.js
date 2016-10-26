@@ -14,4 +14,20 @@ $( document ).ready(function(){
         $('input.date-date').prop('type', 'date');//Recréer l'attibut type et prend pour valeur "date"
         $(".label_publie").before($(".checkbox_publie"));//echange pas position de deux elements pour creer checkbox
     }
+
+    //Scroll to top
+    //Check to see if the window is top if not then display button
+    $(document).scroll(function(){
+        if ($(this).scrollTop() > 100) {//Si srocll de plus de 100px, alors affiche balise a scroll-to-top
+            $('.back-to-top').fadeIn();// fadeIn() -> affiche un element
+        } else {
+            $('.back-to-top').fadeOut();
+        }
+    });
+    
+    //Click event to scroll to top
+    $('.back-to-top').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
+        return false;
+    });
 })

@@ -2,66 +2,73 @@
 
 {% block title %}Accueil - {{ parent() }}{% endblock %}
 
-{% block head %}{{ parent() }}{% endblock %}
+{% block head %}
+  {{ parent() }}
+  <meta name="description" content="Association ANI Grenoble, club d'animes, manga, blind test, cosplay, et autre activités en lien avec la culture du Japon.">
+  <meta name="keywords" content="manga, animes, Grenonle, cosplay">
+{% endblock %}
 
 {% block site_body %}
-<h1>Bienvenue chez ANI Grenoble,</h1>
-<h2 class="h2-index">le club anime des Universités de Grenoble !</h2>
-<div class="back-ground-blanc">
-  {% for AnnonceEvenement in listeAnnoncesEvenement %}
-    <div class="row">
-      <div class="col s12 div-evenement">
-        <div class="card horizontal hoverable">
-          <div class="card-image">
-            <img src="{{ AnnonceEvenement.image.url }}">
+  {{ parent() }}
+  <h1>Bienvenue chez ANI Grenoble,</h1>
+  <h2 class="h2-index">le club anime des Universités de Grenoble !</h2>
+  <div class="back-ground-blanc">
+    {% for AnnonceEvenement in listeAnnoncesEvenement %}
+      <div class="row">
+        <div class="col s12 div-evenement">
+          <div class="card horizontal hoverable">
+            <div class="card-image">
+              <img src="{{ AnnonceEvenement.image.url }}">
+            </div>
+            <div class="card-stacked">
+              <div class="card-content">
+                <p>{{ AnnonceEvenement.contenu|nl2br }}</p>
+              </div>
+              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <div class="card-action">
+                  <a href="{{ path('ani_grenoble_app_annonce_edit', {'id': AnnonceEvenement.id}) }}">Modifier</a>
+                  <a href="{{ path('ani_grenoble_app_annonce_delete', {'id': AnnonceEvenement.id}) }}">Suprrimer</a>
+                </div>
+              {% endif %}
+            </div>
           </div>
-          <div class="card-stacked">
+    		</div>
+      </div>
+    {% else %}
+      <li>Pas (encore !) d'evenement</li>
+    {% endfor %}
+
+    <div class="row">
+      <p>Chaque semaines nous nous retrouvons autour d'animés, blind test, exposés et autres activités en lien avec la culture populaire du Japon.</p>
+      <div class="blian-index">
+        <p>Retrouvez ci-dessous les blians de nos réunions hebdomadaires :</p>
+      </div>
+      {% for AnnonceReunionHebdomadaire in listeAnnoncesReunionHebdomadaire %}
+        <div class="col l4 m6 s12">
+          <div class="card small sticky-action hoverable">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="{{ AnnonceReunionHebdomadaire.image.url }}" alt="{{ AnnonceReunionHebdomadaire.image.alt }}">
+            </div>
             <div class="card-content">
-              <p>{{ AnnonceEvenement.contenu|nl2br }}</p>
+              <span class="card-title activator grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre|capitalize }}<i class="material-icons right">more_vert</i></span>
             </div>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
               <div class="card-action">
-                <a href="{{ path('ani_grenoble_app_annonce_edit', {'id': AnnonceEvenement.id}) }}">Modifier</a>
-                <a href="{{ path('ani_grenoble_app_annonce_delete', {'id': AnnonceEvenement.id}) }}">Suprrimer</a>
+                <a href="{{ path('ani_grenoble_app_annonce_edit', {'id': AnnonceReunionHebdomadaire.id}) }}">Modifier</a>
+                <a href="{{ path('ani_grenoble_app_annonce_delete', {'id': AnnonceReunionHebdomadaire.id}) }}">Suprrimer</a>
               </div>
-            {% endif %}
-          </div>
-        </div>
-  		</div>
-    </div>
-  {% else %}
-    <li>Pas (encore !) d'evenement</li>
-  {% endfor %}
-
-  <div class="row">
-    <p>Chaque semaines nous nous retrouvons autour d'animés, blind test, exposés et autres activités en lien avec la culture populaire du Japon.</p>
-    {% for AnnonceReunionHebdomadaire in listeAnnoncesReunionHebdomadaire %}
-      <div class="col l4 m6 s12">
-        <div class="card small sticky-action hoverable">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="{{ AnnonceReunionHebdomadaire.image.url }}" alt="{{ AnnonceReunionHebdomadaire.image.alt }}">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre|capitalize }}<i class="material-icons right">more_vert</i></span>
-          </div>
-          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <div class="card-action">
-              <a href="{{ path('ani_grenoble_app_annonce_edit', {'id': AnnonceReunionHebdomadaire.id}) }}">Modifier</a>
-              <a href="{{ path('ani_grenoble_app_annonce_delete', {'id': AnnonceReunionHebdomadaire.id}) }}">Suprrimer</a>
+            {% endif %}  
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre|capitalize }}<i class="material-icons right">close</i></span>
+              <p>{{ AnnonceReunionHebdomadaire.contenu|capitalize |nl2br}}</p>
+              <p>par {{ AnnonceReunionHebdomadaire.auteur }},</p>
+              <p>le {{ AnnonceReunionHebdomadaire.date|date('d/m/Y') }}</p>
             </div>
-          {% endif %}  
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre|capitalize }}<i class="material-icons right">close</i></span>
-            <p>{{ AnnonceReunionHebdomadaire.contenu|capitalize |nl2br}}</p>
-            <p>par {{ AnnonceReunionHebdomadaire.auteur }},</p>
-            <p>le {{ AnnonceReunionHebdomadaire.date|date('d/m/Y') }}</p>
           </div>
         </div>
-      </div>
-    {% else %}
-      <li>Pas (encore !) d'annonce</li>
-    {% endfor %}
+      {% else %}
+        <li>Pas (encore !) d'annonce</li>
+      {% endfor %}
+    </div>
   </div>
-</div>
-
 {% endblock %}

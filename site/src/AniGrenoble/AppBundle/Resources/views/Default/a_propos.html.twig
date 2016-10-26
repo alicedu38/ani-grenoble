@@ -2,17 +2,31 @@
 
 {% block title %}A propos - {{ parent() }}{% endblock %}
 
-{% block head %}{{ parent() }}{% endblock %}
+{% block head %}
+  {{ parent() }}
+  <meta name="description" content="Rejoignez ANI Grenoble ! L'association qui traite du thème de la culture du Japon à travers les mangas, animes, cosplay et bien d'autres encore.">
+  <meta name="keywords" content="manga, animes, Grenonle, cosplay">
+{% endblock %}
 
 {% block site_body %}	
+  {{ parent() }}
   <h1>A propos</h1>
-
   <div class="back-ground-blanc">
   	<div class="row qui-sommes-nous-a-propos">
 			<h2>Qui sommes-nous ?</h2>
-			<p>Crée en 2013 par un étudiant d'origine Allemande et qui a oeuvré à son développement, ANI Grenoble est une association qui s'intéresse à la "Culture Populaire Japonaise". Nous proposons essentiellement des activités en lien avec les mangas, animes, blind test, etc.</p>
-      <p>Notre association est majoritairement constituée d'étudiants qui partagent leur passion durant les réunions hébdomadaires ou les soirées spéciales.</p>
-      <p class="phrase-japonnaise">昇る太陽の国</p>
+      <div class="qui-sommes-nous-a-propos2">
+        <div class="col1-qui-sommes-nous-a-propos">
+  			 <p>Crée en 2013 par un étudiant d'origine Allemande et qui a oeuvré à son développement, ANI Grenoble est une association qui s'intéresse à la "Culture Populaire Japonaise". Nous proposons essentiellement des activités en lien avec les mangas, animes, blind test, etc.</p>
+        </div>
+        <div class="col2-qui-sommes-nous-a-propos">
+          <p>Notre association est majoritairement constituée d'étudiants qui partagent leur passion durant les réunions hébdomadaires ou les soirées spéciales.</p>
+        </div>
+      </div>
+      <div class="phrase-japonnaise">
+      <div class="phrase-japonnaise-center">
+        <p>昇る太陽の国</p>
+      </div>
+      </div>
   	</div>
   	<div class="row">
 			<h2>Que faisons-nous ?</h2>
