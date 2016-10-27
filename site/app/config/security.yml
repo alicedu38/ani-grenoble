@@ -4,7 +4,7 @@ security:
     # encode les mots de passe de vos utilisateurs
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
-        AniGrenoble\UtilisateurBundle\Entity\Utilisateur: plaintext
+        AniGrenoble\UtilisateurBundle\Entity\Utilisateur: sha512
 
     role_hierarchy:
         ROLE_ADMIN: ROLE_USER
