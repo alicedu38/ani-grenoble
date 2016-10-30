@@ -1,0 +1,36 @@
+{% extends "AniGrenobleAppBundle:Include:layout.html.twig" %}
+
+{% block title %}Page non trouvée - {{ parent() }}{% endblock %}
+
+{% block head %}
+  {{ parent() }}
+  <meta name="description" content="La page demandée n'existe pas ou plus sur le site ANI Grenoble">
+  <meta name="keywords" content="ANI Grenoble, existe pas">
+{% endblock %}
+
+{% block site_body %}
+  {{ parent() }}
+    <h1>Page non trouvée</h1>
+
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        {# ... #}
+    {% endif %}
+	    <div class="back-ground-blanc">
+	    <div class="row row-page404">
+		    <div class="col1-page404">
+		    <div>
+			    <p>
+			        Aïe, la page que vous tentez d'afficher n'existe pas ou a été déplacée. Merci pour votre compréhension.
+			    </p>
+			    <p>
+			    	<a href="{{ path('ani_grenoble_app_homepage') }}" class="btn btn-secondary">Retour à l'accueil</a>
+			  	</p>
+			</div>
+		  	</div>
+		  	<div class="col2-page404">
+			    <img alt="ani grenoble 404" src="{{ asset('image/page404/another.png') }}">
+		  	</div>
+		</div>
+  	</div>
+
+{% endblock %}

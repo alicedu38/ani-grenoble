@@ -294,3 +294,26 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 		padding-left: 0px;
 	}
 }
+
+
+/*------Page 404------*/
+.row-page404{
+	display: flex;
+}
+.col1-page404{
+	width: 50%;
+	float: left;
+	text-align: center;
+	margin: auto;
+}
+
+.col2-page404{
+	width: 50%;
+	float: right;
+	text-align: center;
+}
+
+.col2-page404 img{
+	width: 40%;
+    height: auto;
+}
