@@ -305,12 +305,14 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	float: left;
 	text-align: center;
 	margin: auto;
+	text-align: justify;
 }
 
 .col2-page404{
 	width: 50%;
 	float: right;
 	text-align: center;
+	text-align: justify;
 }
 
 .col2-page404 img{

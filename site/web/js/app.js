@@ -24,7 +24,7 @@ $( document ).ready(function(){
     $( ".connexion form label:nth-child(7)" ).remove( "label" );//Supprime remember me (se souvenir de moi) de form de connexion
     $('h2').after('<hr>');
     $(".connexion input#_submit").attr('class', 'btn');
-    //$(".register form input:last-child").attr('class', 'btn');
+    $(".register form select").attr('class', 'browser-default');
 
     width =$(document).width();//Responsive cadre evenement (horizontal to vertical)
     if (width <= 600) {
