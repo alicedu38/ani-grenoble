@@ -159,6 +159,16 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	text-align: center;
 }
 
+.div-evenement{
+	visibility: hidden;
+}
+
+.animation-from-left-home{
+	position: relative;
+	animation-name: animation-from-left-home;
+	animation-duration: 1s;
+}
+
 
 /*------A-propos------*/
 .qui-sommes-nous-a-propos .phrase-japonnaise{
@@ -223,6 +233,29 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 .affiches-soirees-speciales-a-propos p{
 	text-align: center;
 }
+
+.element-left, .element-up, .element-right{
+	visibility: hidden;
+}
+
+.animation-from-left{
+	position: relative;
+	animation-name: slideInLeft;
+	animation-duration: 1s;
+}
+
+.animation-from-down{
+	position: relative;
+	animation-name: slideInUp;
+	animation-duration: 1s;
+}
+
+.animation-from-right{
+	position: relative;
+	animation-name: slideInRight;
+	animation-duration: 1s;
+}
+
 
 @media only screen and (max-width: 600px){
 	.qui-sommes-nous-a-propos .col1-qui-sommes-nous-a-propos{
@@ -319,3 +352,56 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	width: 40%;
     height: auto;
 }
+
+
+/*------Animation-----*/
+@-webkit-keyframes animation-from-left-home{
+	0%{
+		-webkit-transform:translate(-20%,0);
+		opacity:0
+	}
+
+	100%{
+		-webkit-transform:translate(0,0);
+		opacity:1
+	}
+}
+
+@-moz-keyframes animation-from-left-home{
+	0%{
+		-moz-transform:translate(-20%,0);
+		opacity:0
+	}
+
+	100%{
+		-moz-transform:translate(0,0);
+		opacity:1
+	}
+}
+
+@-o-keyframes animation-from-left-home{
+	0%{
+		-o-transform:translate(-20%,0);
+		opacity:0
+	}
+
+	100%{
+		-o-transform:translate(0,0);
+		opacity:1
+	}
+}
+
+@keyframes animation-from-left-home{
+	0%{
+		transform:translate(-20%,0);
+		opacity:0
+	}
+
+	100%{
+		transform:translate(0,0);opacity:1
+	}
+}
+
+@-webkit-keyframes slideInLeft{0%{-webkit-transform:translate3d(-50%, 0, 0);transform:translate3d(-50%, 0, 0);visibility:visible}100%{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}@keyframes slideInLeft{0%{-webkit-transform:translate3d(-50%, 0, 0);transform:translate3d(-50%, 0, 0);visibility:visible}100%{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}
+@-webkit-keyframes slideInUp{0%{-webkit-transform:translate3d(0, 100%, 0);transform:translate3d(0, 100%, 0);visibility:visible}100%{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}@keyframes slideInUp{0%{-webkit-transform:translate3d(0, 100%, 0);transform:translate3d(0, 100%, 0);visibility:visible}100%{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}
+@-webkit-keyframes slideInRight{0%{-webkit-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0);visibility:visible}100%{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}@keyframes slideInRight{0%{-webkit-transform:translate3d(100%, 0, 0);transform:translate3d(100%, 0, 0);visibility:visible}100%{-webkit-transform:translate3d(0, 0, 0);transform:translate3d(0, 0, 0)}}
