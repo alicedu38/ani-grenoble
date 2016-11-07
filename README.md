@@ -15,5 +15,30 @@ Se déplacer dans le fichier ani-grenoble/site :</br>
 $ cd /www/ani-grenoble/site ou via l'interface de votre système.
 
 Récupérer les dépandances de Composer + configurer la base de données :</br>
-$ composer install
-database_url : 127.0.0.1
+$ composer install</br>
+database_url : 127.0.0.1</br>
+
+Import de la base de données dans MySQL (le fichier de la base de données se situe dans site/db)
+
+Configuration de la base de données dans Synfony, le fichier site/app/config/parameters.yml:</br>
+parameters:
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: ani_grenoble
+    database_user: Votre_identifiant_base_de_donnees
+    database_password: Votre_mdp_base_de_donnees
+    
+<h2>Execution du projet</h2>
+Avec votre serveur : </br>
+<ul>
+<li>Démarrer le serveur (votre serveur, WAMP ou LAMP)</li>
+<li>www.votre-serveur.com ou en local http://localhost/ani-grenoble/site/web/app_dev.php/ </li>
+</ul>
+
+Avec le serveur de symfony : </br>
+<ul>
+<li>Dans ani-grenoble/site : $ php app/console server:run</li>
+<li>Se rendre à l'URL indiqué dans la consoel</li>
+</ul>
+
+
