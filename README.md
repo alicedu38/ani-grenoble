@@ -21,12 +21,12 @@ database_url : 127.0.0.1</br>
 Import de la base de données dans MySQL (le fichier de la base de données se situe dans site/db)
 
 Configuration de la base de données dans Synfony, le fichier site/app/config/parameters.yml:</br>
-parameters:
-    database_host: 127.0.0.1
-    database_port: null
-    database_name: ani_grenoble
-    database_user: Votre_identifiant_base_de_donnees
-    database_password: Votre_mdp_base_de_donnees
+parameters:</br>
+    database_host: 127.0.0.1</br>
+    database_port: null</br>
+    database_name: ani_grenoble</br>
+    database_user: Votre_identifiant_base_de_donnees</br>
+    database_password: Votre_mdp_base_de_donnees</br>
     
 <h2>Execution du projet</h2>
 Avec votre serveur : </br>
@@ -38,7 +38,7 @@ Avec votre serveur : </br>
 Avec le serveur de symfony : </br>
 <ul>
 <li>Dans ani-grenoble/site : $ php app/console server:run</li>
-<li>Se rendre à l'URL indiqué dans la consoel</li>
+<li>Se rendre à l'URL indiqué dans la console</li>
 </ul>
 
 
