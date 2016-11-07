@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Jeu 27 Octobre 2016 à 23:52
+-- Généré le :  Lun 07 Novembre 2016 à 18:32
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -127,11 +127,11 @@ CREATE TABLE IF NOT EXISTS `image` (
 --
 
 INSERT INTO `image` (`id`, `url`, `alt`) VALUES
-(3, '/ani-grenoble/site/web/uploads/img/handa-kun.jpg', '5sports.png'),
-(4, '/ani-grenoble/site/web/uploads/img/ani-grenoble-concours-mascotte.jpg', 'mon image concours'),
-(5, '/ani-grenoble/site/web/uploads/img/berserk.jpg', 'berserk.jpg'),
-(6, '/ani-grenoble/site/web/uploads/img/Black lagoon.jpg', 'black lagoon'),
-(7, '/ani-grenoble/site/web/uploads/img/rokka-no-yuusha.jpg', 'Rokka no yuusha');
+(3, 'uploads/img/handa-kun.jpg', '5sports.png'),
+(4, 'uploads/img/ani-grenoble-concours-mascotte.jpg', 'mon image concours'),
+(5, 'uploads/img/berserk.jpg', 'berserk.jpg'),
+(6, 'uploads/img/Black lagoon.jpg', 'black lagoon'),
+(7, 'uploads/img/rokka-no-yuusha.jpg', 'Rokka no yuusha');
 
 -- --------------------------------------------------------
 
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 --
 
 INSERT INTO `utilisateur` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`) VALUES
-(15, 'superadmin', 'superadmin', 'superadmin@superadmin.fr', 'superadmin@superadmin.fr', 1, 'cqpt6ht8bbww0840cggok4wg0gw8k4o', 'sLxPvXpv93sQpNiRuzNXJzir4dxvcuCZJXhGMK2uhCuCr0a9awsFNIhWV79I7/jMCG0IXmGycHWo+NX1EJmMDQ==', '2016-10-27 23:51:24', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}', 0, NULL),
+(15, 'superadmin', 'superadmin', 'superadmin@superadmin.fr', 'superadmin@superadmin.fr', 1, 'cqpt6ht8bbww0840cggok4wg0gw8k4o', 'sLxPvXpv93sQpNiRuzNXJzir4dxvcuCZJXhGMK2uhCuCr0a9awsFNIhWV79I7/jMCG0IXmGycHWo+NX1EJmMDQ==', '2016-10-30 23:01:26', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:16:"ROLE_SUPER_ADMIN";}', 0, NULL),
 (16, 'admin', 'admin', 'admin@admin.fr', 'admin@admin.fr', 1, 'q30kqwcase844ssokg00wc48o4ksoc0', 'mrk7DsH7S5KfdxUK+O5tVy4XeNr6wbZxzFfArW2ifvKe8HKSZ97eeQ7O/367wQ5xColMa6GZlKrfcz7XoG0H0g==', '2016-10-27 23:46:16', 0, 0, NULL, NULL, NULL, 'a:1:{i:0;s:10:"ROLE_ADMIN";}', 0, NULL);
 
 --

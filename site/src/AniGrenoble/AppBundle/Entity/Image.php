@@ -131,7 +131,7 @@ class Image
         $nom = $this->file->getClientOriginalName();
 
         // On sauvegarde le nom de fichier dans notre attribut $url
-        $this->url = "/ani-grenoble/site/web/uploads/img/".$nom;
+        $this->url = "uploads/img/".$nom;
 
         if ($this->alt === null) {
             $this->alt = $this->file->getClientOriginalName();

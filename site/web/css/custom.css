@@ -196,12 +196,14 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	width: 50%;
 	float: left;
 	padding-right: 15px;
+	text-align: justify;
 }
 
 .qui-sommes-nous-a-propos .col2-qui-sommes-nous-a-propos{
 	width: 50%;
 	float: right;
 	padding-left: 15px;
+	text-align: justify;
 }
 
 .activites-reunions-hebdomadaires-a-propos img, .affiches-soirees-speciales-a-propos img{
@@ -232,28 +234,6 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 
 .affiches-soirees-speciales-a-propos p{
 	text-align: center;
-}
-
-.element-left, .element-up, .element-right{
-	visibility: hidden;
-}
-
-.animation-from-left{
-	position: relative;
-	animation-name: slideInLeft;
-	animation-duration: 1s;
-}
-
-.animation-from-down{
-	position: relative;
-	animation-name: slideInUp;
-	animation-duration: 1s;
-}
-
-.animation-from-right{
-	position: relative;
-	animation-name: slideInRight;
-	animation-duration: 1s;
 }
 
 
@@ -355,6 +335,28 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 
 
 /*------Animation-----*/
+.element-left, .element-up, .element-right{
+	visibility: hidden;
+}
+
+.animation-from-left{
+	position: relative;
+	animation-name: slideInLeft;
+	animation-duration: 1s;
+}
+
+.animation-from-down{
+	position: relative;
+	animation-name: slideInUp;
+	animation-duration: 1s;
+}
+
+.animation-from-right{
+	position: relative;
+	animation-name: slideInRight;
+	animation-duration: 1s;
+}
+
 @-webkit-keyframes animation-from-left-home{
 	0%{
 		-webkit-transform:translate(-20%,0);
