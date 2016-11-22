@@ -16,6 +16,7 @@ $ cd /www/ani-grenoble/site ou via l'interface de votre système.
 
 Récupérer les dépandances de Composer + configurer la base de données :</br>
 $ composer install</br>
+pour Linux : $ sudo apt install composer puis $ composer install</br>
 database_url : 127.0.0.1</br>
 
 Import de la base de données dans MySQL (le fichier de la base de données se situe dans site/db)
