@@ -104,6 +104,10 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	padding: 10px 0px;
 }
 
+.centrer{
+	text-align: center;
+}
+
 @media only screen and (max-width: 450px){
 	.back-ground-blanc{
 		padding: 20px 0px;
