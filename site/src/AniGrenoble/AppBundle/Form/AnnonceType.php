@@ -30,7 +30,7 @@ class AnnonceType extends AbstractType
                 //'expanded' => true //Checkbox au lieu d'une liste select
             ))
             ->add('publie', 'checkbox', array('required' => false))// Element non obligatoire dans le form
-            ->add('save', 'submit');
+            ->add('valider', 'submit');
     }
     
     /**

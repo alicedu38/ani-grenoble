@@ -24,6 +24,8 @@ class DefaultController extends Controller
             ->getRepository('AniGrenobleAppBundle:Annonce')
             ->getAnnonceWithCategories(array('Reunion_hebdomadaire'));
 
+
+
         return $this->render('AniGrenobleAppBundle:Default:index.html.twig', array(
             'listeAnnoncesEvenement' => $listeAnnoncesEvenement,
             'listeAnnoncesReunionHebdomadaire' => $listeAnnoncesReunionHebdomadaire,
@@ -58,7 +60,7 @@ class DefaultController extends Controller
             $em->persist($annonce);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
+            $request->getSession()->getFlashBag()->add('notice green accent-2', 'Annonce bien ajoutée.');
 
             // On redirige vers la page de visualisation de l'annonce nouvellement créée
             return $this->redirect($this->generateUrl('ani_grenoble_app_homepage'));
@@ -101,7 +103,7 @@ class DefaultController extends Controller
             $em->persist($annonce);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
+            $request->getSession()->getFlashBag()->add('notice green accent-2', 'Annonce bien enregistrée.');
 
             // On redirige vers la page d'accueil'
             return $this->redirect($this->generateUrl('ani_grenoble_app_homepage'));
@@ -138,7 +140,7 @@ class DefaultController extends Controller
             $em->remove($annonce);
             $em->flush();
 
-            $request->getSession()->getFlashBag()->add('info', 'Article bien supprimée.');
+            $request->getSession()->getFlashBag()->add('notice green accent-2', 'Annonce bien supprimée.');
 
             // Puis on redirige vers l'accueil
             return $this->redirect($this->generateUrl('ani_grenoble_app_homepage', array('page' => "1")));

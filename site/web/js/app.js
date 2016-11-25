@@ -17,9 +17,7 @@ $( document ).ready(function(){
         $('html, body').animate({scrollTop : 0},800);
         return false;
     });
-})
-
-$( document ).ready(function(){
+    
     $( "span" ).remove( ".sr-only" );//Suprrime span dans bar des droits utilisateurs
     $( ".connexion form label:nth-child(7)" ).remove( "label" );//Supprime remember me (se souvenir de moi) de form de connexion
     $('h2').after('<hr>');

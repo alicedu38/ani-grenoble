@@ -10,8 +10,8 @@
 
 {% block site_body %}
   {{ parent() }}
-  <h1>Bienvenue chez ANI Grenoble,</h1>
-  <p class="p-titre-index">le club anime des Universités de Grenoble !</p>
+  <h1>Bienvenue chez <span style="white-space: nowrap;">ANI Grenoble,</span></h1>
+  <p class="p-titre-index">le club anime des Universités de <span style="white-space: nowrap;">Grenoble !</span></p>
   <div class="back-ground-blanc">
     {% for AnnonceEvenement in listeAnnoncesEvenement %}
       <div class="row">
@@ -46,7 +46,11 @@
         <div class="col l4 m6 s12 element-up">
           <div class="card small sticky-action hoverable">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="{{ asset(''~AnnonceReunionHebdomadaire.image.url~'') }}" alt="{{ AnnonceReunionHebdomadaire.image.alt }}">
+              {% if AnnonceReunionHebdomadaire.image is not null %}
+                <img class="activator" src="{{ asset(''~AnnonceReunionHebdomadaire.image.url~'') }}" alt="{{ AnnonceReunionHebdomadaire.image.alt }}">
+              {% else %}
+                <p>Pas de visuel</p>
+              {% endif %}
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre|capitalize }}<i class="material-icons right">more_vert</i></span>

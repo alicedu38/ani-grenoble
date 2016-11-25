@@ -65,7 +65,7 @@
                     {% if is_granted('ROLE_SUPER_ADMIN') %}                   
                         <a class="nav-link" href="{{ path('fos_user_registration_register') }}">Ajouter un utilisateur<span class="sr-only">(current)</span></a> |
                     {% endif %}
-                    <a class="nav-link" href="{{ path('ani_grenoble_app_annonce_add') }}">Ajouter un article<span class="sr-only">(current)</span></a> |
+                    <a class="nav-link" href="{{ path('ani_grenoble_app_annonce_add') }}">Ajouter une réunion/evenement<span class="sr-only">(current)</span></a> |
                     <a class="nav-link" href="{{ path('fos_user_change_password') }}">Change mot de passe</a>
                     </p>
                 </div> 
@@ -94,7 +94,7 @@
                 </div>
                 <div class="footer-copyright">
                     <div class="container center-align">
-                        Copyright © {{ 'now'|date('Y') }}. Tous droits réservés
+                        Copyright © {{ 'now'|date('Y') }}. Tous droits réservés.
                     </div>
                 </div>
             </footer>

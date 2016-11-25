@@ -4,7 +4,16 @@
 {% block body %}
 	{# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
 	{% block site_body %} 	
-		<a href="#" class="back-to-top"></a>			
+		<a href="#" class="back-to-top"></a>
+		{% if app.request.hasPreviousSession %}
+            {% for type, messages in app.session.flashbag.all() %}
+                {% for message in messages %}
+                    <div class="flash-{{ type }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}			
 	{% endblock %}
 		
 {% endblock %}
