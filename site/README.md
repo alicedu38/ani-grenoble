@@ -1,68 +1,45 @@
-Symfony Standard Edition
-========================
+<h2>Prérequis</h2>
+<ul>
+<li>PHP version : supérieur ou égale à 5.3.9,</li>
+<li>Serveur http : Apache, IIS, etc,</li>
+<li>Système de base de données : MySQL, PostGreSQL, SQLite, etc.</li>
+</ul>
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+Pour faire fonctionner le projet en local sur votre ordinateur vous pouvez utiliser WAMP ou LAMP.
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+<h2>Installation</h2>
+Télécharger le projet sur votre ordinateur :</br>
+$ git clone https://github.com/alicedu38/ani-grenoble.git ou cliqué sur le bouton "Download".
 
-What's inside?
---------------
+Se déplacer dans le fichier ani-grenoble/site :</br>
+$ cd /www/ani-grenoble/site ou via l'interface de votre système.
 
-The Symfony Standard Edition is configured with the following defaults:
+Récupérer les dépandances de Composer + configurer la base de données :</br>
+$ composer install</br>
+pour Linux : $ sudo apt install composer puis $ composer install</br>
+database_url : 127.0.0.1</br>
 
-  * An AppBundle you can use to start coding;
+Import de la base de données dans MySQL (le fichier de la base de données se situe dans site/db)
 
-  * Twig as the only configured template engine;
+Configuration de la base de données dans Synfony, le fichier site/app/config/parameters.yml:</br>
+parameters:</br>
+    database_host: 127.0.0.1</br>
+    database_port: null</br>
+    database_name: ani_grenoble</br>
+    database_user: Votre_identifiant_base_de_donnees</br>
+    database_password: Votre_mdp_base_de_donnees</br>
+    
+<h2>Execution du projet</h2>
+Avec votre serveur : </br>
+<ul>
+<li>Démarrer le serveur (votre serveur, WAMP ou LAMP)</li>
+<li>www.votre-serveur.com ou en local http://localhost/ani-grenoble/site/web/app_dev.php/ </li>
+</ul>
 
-  * Doctrine ORM/DBAL;
+Avec le serveur de symfony : </br>
+<ul>
+<li>Dans ani-grenoble/site : $ php app/console server:run</li>
+<li>Se rendre à l'URL indiqué dans la console</li>
+</ul>
 
-  * Swiftmailer;
 
-  * Annotations enabled for everything.
-
-It comes pre-configured with the following bundles:
-
-  * **FrameworkBundle** - The core Symfony framework bundle
-
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
-
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
-
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
-
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
-
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev/test env) - Adds code generation
-    capabilities
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/2.8/book/installation.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/2.8/book/doctrine.html
-[8]:  https://symfony.com/doc/2.8/book/templating.html
-[9]:  https://symfony.com/doc/2.8/book/security.html
-[10]: https://symfony.com/doc/2.8/cookbook/email.html
-[11]: https://symfony.com/doc/2.8/cookbook/logging/monolog.html
-[13]: https://symfony.com/doc/2.8/bundles/SensioGeneratorBundle/index.html
