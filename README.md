@@ -9,7 +9,7 @@ Pour faire fonctionner le projet en local sur votre ordinateur vous pouvez utili
 
 <h2>Installation</h2>
 Télécharger le projet sur votre ordinateur :</br>
-$ git clone https://github.com/symfony/symfony-demo ou cliqué sur le bouton "Download".
+$ git clone https://github.com/alicedu38/ani-grenoble.git ou cliqué sur le bouton "Download".
 
 Se déplacer dans le fichier ani-grenoble/site :</br>
 $ cd /www/ani-grenoble/site ou via l'interface de votre système.
