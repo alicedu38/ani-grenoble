@@ -8,19 +8,19 @@
 Pour faire fonctionner le projet en local sur votre ordinateur vous pouvez utiliser WAMP ou LAMP.
 
 <h2>Installation</h2>
-1. Télécharger le projet sur votre ordinateur :</br>
+1.Télécharger le projet sur votre ordinateur :</br>
 ```code
 $ git clone https://github.com/alicedu38/ani-grenoble.git 
 ```
 ou cliqué sur le bouton "Download".
 
-2. Se déplacer dans le fichier ani-grenoble/site :</br>
+2.Se déplacer dans le fichier ani-grenoble/site :</br>
 ```code
 $ cd /www/ani-grenoble/site 
 ```
 ou via l'interface de votre système.
 
-3. Récupérer les dépandances de Composer + configurer la base de données (fichier site/app/config/parameters.yml) :</br>
+3.Récupérer les dépandances de Composer + configurer la base de données (fichier site/app/config/parameters.yml) :</br>
 Installez composer puis lancez la commande suivante :
 ```code
 $ composer install
