@@ -3,6 +3,7 @@
 namespace AniGrenoble\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Categorie
@@ -25,6 +26,12 @@ class Categorie
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
+     * @Assert\Length(
+     *      min = 1,
+     *      max = 50,
+     *      minMessage = "Le titre de la categorie doit faire {{ limit }} caractères mini.",
+     *      maxMessage = "Le titre de la categorie doit faire {{ limit }} caractères maxi."
+     * )
      */
     private $nom;
 
@@ -32,7 +39,7 @@ class Categorie
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -55,7 +62,7 @@ class Categorie
     /**
      * Get nom
      *
-     * @return string 
+     * @return string
      */
     public function getNom()
     {

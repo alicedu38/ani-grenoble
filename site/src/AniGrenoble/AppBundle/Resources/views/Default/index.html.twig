@@ -18,7 +18,11 @@
         <div class="col s12 div-evenement">
           <div class="card horizontal hoverable">
             <div class="card-image">
-              <img src="{{ asset(''~AnnonceEvenement.image.url~'') }}">
+              {% if AnnonceEvenement.image is not null %}
+                <img src="{{ asset(''~AnnonceEvenement.image.url~'') }}">
+              {% else %}
+                <p>Pas de visuel</p>
+              {% endif %}
             </div>
             <div class="card-stacked">
               <div class="card-content">
@@ -70,7 +74,7 @@
           </div>
         </div>
       {% else %}
-        <li>Pas (encore !) d'annonce</li>
+        <p>Pas (encore !) d'annonce</p>
       {% endfor %}
     </div>
   </div>

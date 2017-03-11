@@ -86,6 +86,6 @@ assetic:
 #Configuration mail
 swiftmailer:
    transport: gmail
-   username:  halibeldu38@gmail.com
-   password:  chatchat
+   username:  ani.grenoble@gmail.com
+   password:  mot-de-passe-adresse-mail
 
