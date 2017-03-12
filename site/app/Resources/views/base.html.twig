@@ -4,14 +4,15 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>{% block title %}{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         {% block head %}{% endblock %}
-        {% block stylesheets %}          
+        {% block stylesheets %}
             <!--Import Google Icon Font-->
-            <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">         
+            <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             {% stylesheets filter='cssrewrite' 'css/materialize.min.css' 'css/custom.css'%}
                 <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
             {% endstylesheets %}
-        {% endblock %}               
+        {% endblock %}
     </head>
     <body>
         <div class="container">
@@ -20,15 +21,15 @@
                     <a class="brand-logo" href="{{ path('ani_grenoble_app_homepage') }}"><img alt="ani grenoble"src="{{ asset('image/ani-grenoble.jpg') }}"></a>
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-                    <ul class="right hide-on-med-and-down">                      
+                    <ul class="right hide-on-med-and-down">
                         <li>
-                            <a class="nav-link" href="{{ path('ani_grenoble_app_a_propos') }}">A propos</a>
+                            <a class="nav-link" href="{{ path('ani_grenoble_app_aPropos') }}">A propos</a>
                         </li>
                         <li>
                             <a class="nav-link" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a>
                         </li>
                         <!-- On n'affiche le lien qu'au utilisateur abilités -->
-                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}                            
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             <li>
                                 <a class="nav-link" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
                             </li>
@@ -36,17 +37,17 @@
                             <li>
                                 <a class="nav-link" href="{{ path('fos_user_security_login') }}">Connexion</a>
                             </li>
-                        {% endif %}                       
+                        {% endif %}
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
                         <li>
-                            <a class="nav-link" href="{{ path('ani_grenoble_app_a_propos') }}">A propos</a>
+                            <a class="nav-link" href="{{ path('ani_grenoble_app_aPropos') }}">A propos</a>
                         </li>
                         <li>
                             <a class="nav-link" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a>
                         </li>
                         <!-- On n'affiche le lien qu'au utilisateur abilités -->
-                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}                         
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             <li>
                                 <a class="nav-link" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
                             </li>
@@ -54,21 +55,21 @@
                             <li>
                                 <a class="nav-link" href="{{ path('fos_user_security_login') }}">Connexion</a>
                             </li>
-                        {% endif %}                         
-                    </ul>                        
+                        {% endif %}
+                    </ul>
                 </div>
             </nav>
-         
+
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 <div class="card-panel pink lighten-5">
                     <p class="">Bonjour {{ app.user.username }}.
-                    {% if is_granted('ROLE_SUPER_ADMIN') %}                   
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
                         <a class="nav-link" href="{{ path('fos_user_registration_register') }}">Ajouter un utilisateur<span class="sr-only">(current)</span></a> |
                     {% endif %}
                     <a class="nav-link" href="{{ path('ani_grenoble_app_annonce_add') }}">Ajouter une réunion/evenement<span class="sr-only">(current)</span></a> |
                     <a class="nav-link" href="{{ path('fos_user_change_password') }}">Change mot de passe</a>
                     </p>
-                </div> 
+                </div>
             {% endif %}
 
             {% block body %}
@@ -85,7 +86,7 @@
                         <div class="col l4 offset-l2 s12">
                             <h5 class="white-text">Plan du site</h5>
                             <ul>
-                                <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_app_a_propos') }}">A propos</a></li>
+                                <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_app_aPropos') }}">A propos</a></li>
                                 <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a></li>
                                 <li><a class="grey-text text-lighten-3" href="{{ path('fos_user_security_login') }}">Connexion</a></li>
                             </ul>

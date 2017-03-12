@@ -18,15 +18,15 @@
 
     <div class="row">
 		{# Génération du label. #}
-		{{ form_label(form.titre, "Titre de l'annonce", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}	
+		{{ form_label(form.titre, "Titre de l'annonce", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 		{# Génération de l'input. #}
-		{{ form_widget(form.titre, {'attr': {'class': 'form-control'}}) }}		
+		{{ form_widget(form.titre, {'attr': {'class': 'form-control'}}) }}
     </div>
 
     {# Idem pour un autre champ. #}
     <div class="row">
-		{{ form_label(form.contenu, "Contenu de l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}		
-		{{ form_widget(form.contenu, {'attr': {'class': 'form-control'}}) }}		
+		{{ form_label(form.contenu, "Contenu de l'article", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+		{{ form_widget(form.contenu, {'attr': {'class': 'form-control'}}) }}
     </div>
 
   	{# Génération du label + error + widget pour un champ #}
@@ -41,8 +41,8 @@
     </div>
 
     <div class="row">
-		{{ form_label(form.publie, "Etat Publie ?", {'label_attr': {'class': 'col-sm-3 control-label label_publie'}}) }}				
-		{{ form_widget(form.publie, {'attr': {'class': 'form-control checkbox_publie'}}) }}		
+		{{ form_label(form.publie, "Etat Publie ?", {'label_attr': {'class': 'col-sm-3 control-label label_publie'}}) }}
+		{{ form_widget(form.publie, {'attr': {'class': 'form-control checkbox_publie'}}) }}
     </div>
 
     <div class="row">
@@ -68,7 +68,7 @@
      	Dans cet exemple, ce serait le champ CSRF (géré automatiquement par Symfony !)
      	et tous les champs cachés (type « hidden »). #}
   	{{ form_rest(form) }}
-  
+
   	{# Fermeture de la balise <form> du formulaire HTML #}
   	{{ form_end(form) }}
 </div>

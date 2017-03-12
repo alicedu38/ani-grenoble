@@ -3,7 +3,6 @@
 namespace AniGrenoble\AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -86,8 +85,6 @@ class Annonce
      */
     private $publie;
 
-    private $published = true;
-  
     public function __construct()
     {
         // Par défaut, la date de l'annonce est la date d'aujourd'hui
@@ -99,7 +96,7 @@ class Annonce
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -122,7 +119,7 @@ class Annonce
     /**
      * Get titre
      *
-     * @return string 
+     * @return string
      */
     public function getTitre()
     {
@@ -145,7 +142,7 @@ class Annonce
     /**
      * Get contenu
      *
-     * @return string 
+     * @return string
      */
     public function getContenu()
     {
@@ -168,7 +165,7 @@ class Annonce
     /**
      * Get auteur
      *
-     * @return string 
+     * @return string
      */
     public function getAuteur()
     {
@@ -191,7 +188,7 @@ class Annonce
     /**
      * Get date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -214,7 +211,7 @@ class Annonce
     /**
      * Get publie
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getPublie()
     {
@@ -247,7 +244,7 @@ class Annonce
     /**
      * Get categories
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getCategories()
     {
@@ -270,7 +267,7 @@ class Annonce
     /**
      * Get image
      *
-     * @return \AniGrenoble\AppBundle\Entity\Image 
+     * @return \AniGrenoble\AppBundle\Entity\Image
      */
     public function getImage()
     {

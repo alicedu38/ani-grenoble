@@ -75,6 +75,10 @@ fos_user:
         registration:
             form:
                 type: AniGrenoble\UtilisateurBundle\Form\RegistrationType
+        from_email:
+            address: "%mailer_user%"
+            sender_name: "No Reply"
+
 
 #Config bundle de gestion du css et js
 assetic:
@@ -88,4 +92,3 @@ swiftmailer:
    transport: gmail
    username:  ani.grenoble@gmail.com
    password:  mot-de-passe-adresse-mail
-

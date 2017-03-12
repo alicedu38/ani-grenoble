@@ -84,7 +84,7 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 }
 
 .back-to-top{
-	width: 100px; 
+	width: 100px;
 	height: 100px;
 	position:fixed;
 	bottom:75px;
@@ -106,6 +106,10 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 
 .centrer{
 	text-align: center;
+}
+
+.card.small {
+  height: 250px;
 }
 
 @media only screen and (max-width: 450px){

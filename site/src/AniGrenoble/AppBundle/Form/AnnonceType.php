@@ -5,7 +5,6 @@ namespace AniGrenoble\AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class AnnonceType extends AbstractType
 {
@@ -32,7 +31,7 @@ class AnnonceType extends AbstractType
             ->add('publie', 'checkbox', array('required' => false))// Element non obligatoire dans le form
             ->add('valider', 'submit');
     }
-    
+
     /**
      * {@inheritdoc}
      */

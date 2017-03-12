@@ -64,7 +64,7 @@
                 <a href="{{ path('ani_grenoble_app_annonce_edit', {'id': AnnonceReunionHebdomadaire.id}) }}">Modifier</a>
                 <a href="{{ path('ani_grenoble_app_annonce_delete', {'id': AnnonceReunionHebdomadaire.id}) }}">Suprrimer</a>
               </div>
-            {% endif %}  
+            {% endif %}
             <div class="card-reveal">
               <span class="card-title grey-text text-darken-4">{{ AnnonceReunionHebdomadaire.titre|capitalize }}<i class="material-icons right">close</i></span>
               <p>{{ AnnonceReunionHebdomadaire.contenu|capitalize |nl2br}}</p>

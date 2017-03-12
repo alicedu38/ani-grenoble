@@ -32,9 +32,9 @@ class DefaultController extends Controller
             ));
     }
 
-    public function a_proposAction()
+    public function aProposAction()
     {
-        return $this->render('AniGrenobleAppBundle:Default:a_propos.html.twig');
+        return $this->render('AniGrenobleAppBundle:Default:aPropos.html.twig');
     }
 
     /**
@@ -72,7 +72,7 @@ class DefaultController extends Controller
         return $this->render('AniGrenobleAppBundle:Default:add.html.twig', array(
           'form' => $form->createView(),
         ));
-            
+
     }
 
     public function editAction($id, Request $request)
@@ -112,7 +112,7 @@ class DefaultController extends Controller
         // À ce stade, le formulaire n'est pas valide car :
         // - Soit la requête est de type GET, donc le visiteur vient d'arriver sur la page et veut voir le formulaire
         // - Soit la requête est de type POST, mais le formulaire contient des valeurs invalides, donc on l'affiche de nouveau
-        return $this->render('AniGrenobleAppBundle:Default:edit.html.twig', array(
+        return $this->render('AniGrenobleAppBundle:Default:edite.html.twig', array(
           'form' => $form->createView(),
         ));
     }

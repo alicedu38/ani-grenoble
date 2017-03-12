@@ -23,7 +23,7 @@ security:
 
         main:
             pattern: ^/
-            anonymous: true     
+            anonymous: true
             provider:  main_provider_utilisateur
             form_login:
                 login_path: fos_user_security_login
@@ -32,12 +32,12 @@ security:
                 path:   fos_user_security_logout
                 target: /
             remember_me:
-                key:        %secret% # %secret% est un paramètre de parameters.yml    
+                key:        %secret% # %secret% est un paramètre de parameters.yml
 
     access_control:
         - { path: ^/add, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
         - { path: ^/logout, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
-        - { path: ^/edit, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
+        - { path: ^/edite, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
         - { path: ^/delete, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }
         - { path: ^/change-password, roles: ROLE_SUPER_ADMIN }
         - { path: ^/register, roles: ROLE_SUPER_ADMIN }
