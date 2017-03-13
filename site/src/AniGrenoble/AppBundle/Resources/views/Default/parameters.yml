@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: anigrenosmroot.mysql.db
+    database_port: null
+    database_name: anigrenosmroot
+    database_user: anigrenosmroot
+    database_password: F01unib21
+    mailer_transport: mail
+    mailer_host: smtp.http://ani-grenoble.fr
+    mailer_user: halibeldu38@gmail.com
+    mailer_password: 7Cbxsr1995
+    secret: ThisTokenIsNotSoSecretChangeIt
