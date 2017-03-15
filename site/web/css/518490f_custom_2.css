@@ -1,7 +1,7 @@
 /*------Css general------*/
 body{
-	background-image: url('../image/Background_Haut.png'),
-	url('../image/Background_Bas.png');
+	background-image: url('../../image/Background_Haut.png'),
+	url('../../image/Background_Bas.png');
 	background-repeat: no-repeat, repeat;
 	background-size: contain, contain;
 }
@@ -90,14 +90,14 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	bottom:75px;
 	right:0px;
 	display:none;
-	background-image: url('../image/back_to_top/happy-normal.png');
+	background-image: url('../../image/back_to_top/happy-normal.png');
 	background-repeat: no-repeat;
     background-size: contain;
     z-index: 3;
 }
 
 .back-to-top:hover{
-	background-image: url('../image/back_to_top/happy-finger-top.png');
+	background-image: url('../../image/back_to_top/happy-finger-top.png');
 }
 
 .flash-notice{
