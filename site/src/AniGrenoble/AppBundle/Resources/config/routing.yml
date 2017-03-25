@@ -32,6 +32,10 @@ ani_grenoble_app_annonce_delete:
     requirements:
         id: \d*
 
+ani_grenoble_app_annonce_all:
+    path:     /all
+    defaults: { _controller: AniGrenobleAppBundle:Default:all }
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

@@ -1,0 +1,35 @@
+{% extends "AniGrenobleAppBundle:Include:layout.html.twig" %}
+
+{% block title %}Ajout article - {{ parent() }}{% endblock %}
+
+{% block head %}{{ parent() }}{% endblock %}
+
+{% block site_body %}
+<h2>Liste de toutes les annonces créés</h2>
+<div class="back-ground-blanc">
+	<table>
+		<thead>
+			<tr>
+				<th>Titre</th>
+				<th>Date</th>
+				<th>Etat</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for annonce in annonces %}
+			<tr>
+				<td>{{annonce.titre}}</td>
+				<td>{{annonce.date|date("d/m/Y")}}</td>
+				<td>{% if annonce.publie %}Publiée{% else %}Non publiée{% endif %}</td>
+				<td>
+					<p><a href="{{ path('ani_grenoble_app_annonce_edit', {'id': annonce.id}) }}">Modifier</a></p>
+					<p><a href="{{ path('ani_grenoble_app_annonce_delete', {'id': annonce.id}) }}">Supprimer</a></p>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+
+{% endblock %}
