@@ -1,0 +1,19 @@
+ani_grenoble_admin_annonce_add:
+    path:      /add
+    defaults:  { _controller: AniGrenobleAdminBundle:Annonce:add }
+
+ani_grenoble_admin_annonce_edit:
+    path:     /edite/{id}
+    defaults: { _controller: AniGrenobleAdminBundle:Annonce:edit }
+    requirements:
+        id: \d*
+
+ani_grenoble_admin_annonce_delete:
+    path:     /delete/{id}
+    defaults: { _controller: AniGrenobleAdminBundle:Annonce:delete }
+    requirements:
+        id: \d*
+
+ani_grenoble_admin_annonce_all:
+    path:     /
+    defaults: { _controller: AniGrenobleAdminBundle:Annonce:index }

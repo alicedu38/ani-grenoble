@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class CategorieRepository extends EntityRepository
 {
+  public function getCategorie($categorie){
+		$qb = $this->createQueryBuilder('cat');
+
+    $qb->where('cat.nom = :catName')
+		->setParameter('catName', $categorie);
+
+		return $qb;
+	}
 }

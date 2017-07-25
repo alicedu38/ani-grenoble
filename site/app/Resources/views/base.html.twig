@@ -62,14 +62,25 @@
 
       {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
       <div class="card-panel pink lighten-5">
-        <p class="">Bonjour {{ app.user.username }}.
-          {% if is_granted('ROLE_SUPER_ADMIN') %}
-          <a class="nav-link" href="{{ path('fos_user_registration_register') }}">Ajouter un utilisateur<span class="sr-only">(current)</span></a> |
-          {% endif %}
-          <a class="nav-link" href="{{ path('ani_grenoble_app_annonce_add') }}">Ajouter une réunion/evenement<span class="sr-only">(current)</span></a> |
-          <a class="nav-link" href="{{ path('ani_grenoble_app_annonce_all') }}">Toutes les annonces</a> |
-          <a class="nav-link" href="{{ path('fos_user_change_password') }}">Change mot de passe</a>
-        </p>
+        <p class="">Bonjour {{ app.user.username }}.</p>
+        <ul>
+          <li>
+            <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Annonces <i class="material-icons right">arrow_drop_down</i></a>
+            <ul id='dropdown1' class='dropdown-content'>
+              <li><a href="{{ path('ani_grenoble_admin_annonce_add') }}">Ajouter</a></li>
+              <li><a href="{{ path('ani_grenoble_admin_annonce_all') }}">Voir</a></li>
+            </ul>
+          </li>
+          <li>
+            <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Compte <i class="material-icons right">arrow_drop_down</i></a>
+            <ul id='dropdown2' class='dropdown-content'>
+              {% if is_granted('ROLE_SUPER_ADMIN') %}
+              <li><a href="{{ path('fos_user_registration_register') }}">Ajouter</a></li>
+              {% endif %}
+              <li><a href="{{ path('fos_user_change_password') }}">Change mot de passe</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
       {% endif %}
 

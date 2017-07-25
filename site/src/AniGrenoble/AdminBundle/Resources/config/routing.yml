@@ -1,0 +1,7 @@
+ani_grenoble_admin_homepage:
+    path:     /
+    defaults: { _controller: AniGrenobleAppBundle:Default:index }
+
+sd6_production_admin_category:
+    resource: "@AniGrenobleAdminBundle/Resources/config/routing/annonce.yml"
+    prefix:   /admin/annonce

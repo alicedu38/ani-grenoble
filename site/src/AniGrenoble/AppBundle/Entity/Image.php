@@ -43,7 +43,7 @@ class Image
      *     maxSize = "1024k",
      *     mimeTypes = {"image/png", "image/jpeg", "image/jpg", "image/gif"},
      *     mimeTypesMessage = "Taille ou format de l'image incorrect. Max taille : 1024k, format : jepg, jpg, png, gif."
-     * ) 
+     * )
      */
     private $file;
 
@@ -51,9 +51,14 @@ class Image
     private $tempFilename;
 
     /**
+     * @ORM\ManyToOne(targetEntity="AniGrenoble\AppBundle\Entity\Categorie", cascade={"persist"})
+     */
+    public $categorie;
+
+    /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -76,7 +81,7 @@ class Image
     /**
      * Get url
      *
-     * @return string 
+     * @return string
      */
     public function getUrl()
     {
@@ -99,7 +104,7 @@ class Image
     /**
      * Get alt
      *
-     * @return string 
+     * @return string
      */
     public function getAlt()
     {
@@ -150,7 +155,7 @@ class Image
         }
 
         // On déplace le fichier envoyé dans le répertoire de notre choix
-        $this->file->move($this->getUploadRootDir(), $this->file->getClientOriginalName());             
+        $this->file->move($this->getUploadRootDir(), $this->file->getClientOriginalName());
     }
 
     /**
@@ -184,5 +189,29 @@ class Image
     {
         // On retourne le chemin relatif vers l'image pour notre code PHP
         return __DIR__.'/../../../../web/'.$this->getUploadDir();
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \AniGrenoble\AppBundle\Entity\Categorie $categorie
+     *
+     * @return Image
+     */
+    public function setCategorie(\AniGrenoble\AppBundle\Entity\Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \AniGrenoble\AppBundle\Entity\Categorie
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }

@@ -30,8 +30,8 @@
               </div>
               {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 <div class="card-action">
-                  <a href="{{ path('ani_grenoble_app_annonce_edit', {'id': AnnonceEvenement.id}) }}">Modifier</a>
-                  <a href="{{ path('ani_grenoble_app_annonce_delete', {'id': AnnonceEvenement.id}) }}">Suprrimer</a>
+                  <a href="{{ path('ani_grenoble_admin_annonce_edit', {'id': AnnonceEvenement.id}) }}">Modifier</a>
+                  <a href="{{ path('ani_grenoble_admin_annonce_delete', {'id': AnnonceEvenement.id}) }}">Suprrimer</a>
                 </div>
               {% endif %}
             </div>
@@ -61,8 +61,8 @@
             </div>
             {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
               <div class="card-action">
-                <a href="{{ path('ani_grenoble_app_annonce_edit', {'id': AnnonceReunionHebdomadaire.id}) }}">Modifier</a>
-                <a href="{{ path('ani_grenoble_app_annonce_delete', {'id': AnnonceReunionHebdomadaire.id}) }}">Suprrimer</a>
+                <a href="{{ path('ani_grenoble_admin_annonce_edit', {'id': AnnonceReunionHebdomadaire.id}) }}">Modifier</a>
+                <a href="{{ path('ani_grenoble_admin_annonce_delete', {'id': AnnonceReunionHebdomadaire.id}) }}">Suprrimer</a>
               </div>
             {% endif %}
             <div class="card-reveal">

@@ -7,7 +7,7 @@
 {% block site_body %}
 <h2>Liste de toutes les annonces créés</h2>
 <div class="back-ground-blanc">
-	<table>
+	<table class="striped">
 		<thead>
 			<tr>
 				<th>Titre</th>
@@ -23,8 +23,8 @@
 				<td>{{annonce.date|date("d/m/Y")}}</td>
 				<td>{% if annonce.publie %}Publiée{% else %}Non publiée{% endif %}</td>
 				<td>
-					<p><a href="{{ path('ani_grenoble_app_annonce_edit', {'id': annonce.id}) }}">Modifier</a></p>
-					<p><a href="{{ path('ani_grenoble_app_annonce_delete', {'id': annonce.id}) }}">Supprimer</a></p>
+					<p><a href="{{ path('ani_grenoble_admin_annonce_edit', {'id': annonce.id}) }}">Modifier</a></p>
+					<p><a href="{{ path('ani_grenoble_admin_annonce_delete', {'id': annonce.id}) }}">Supprimer</a></p>
 				</td>
 			</tr>
 			{% endfor %}
