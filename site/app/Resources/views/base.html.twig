@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title %}{% endblock %}</title>
@@ -13,105 +13,118 @@
     <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />
     {% endstylesheets %}
     {% endblock %}
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <nav>
-        <div class="nav-wrapper">
-          <a class="brand-logo" href="{{ path('ani_grenoble_app_homepage') }}"><img alt="ani grenoble"src="{{ asset('image/ani-grenoble.jpg') }}"></a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+        <nav>
+            <div class="nav-wrapper">
+                <a class="brand-logo" href="{{ path('ani_grenoble_app_homepage') }}"><img alt="ani grenoble"src="{{ asset('image/ani-grenoble.jpg') }}"></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a class="nav-link" href="{{ path('ani_grenoble_app_aPropos') }}">A propos</a>
-            </li>
-            <li>
-              <a class="nav-link" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a>
-            </li>
-            <!-- On n'affiche le lien qu'au utilisateur abilités -->
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <li>
-              <a class="nav-link" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
-            </li>
-            {% else %}
-            <li>
-              <a class="nav-link" href="{{ path('fos_user_security_login') }}">Connexion</a>
-            </li>
-            {% endif %}
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li>
-              <a class="nav-link" href="{{ path('ani_grenoble_app_aPropos') }}">A propos</a>
-            </li>
-            <li>
-              <a class="nav-link" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a>
-            </li>
-            <!-- On n'affiche le lien qu'au utilisateur abilités -->
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-            <li>
-              <a class="nav-link" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
-            </li>
-            {% else %}
-            <li>
-              <a class="nav-link" href="{{ path('fos_user_security_login') }}">Connexion</a>
-            </li>
-            {% endif %}
-          </ul>
-        </div>
-      </nav>
-
-      {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-      <div class="card-panel pink lighten-5">
-        <p class="">Bonjour {{ app.user.username }}.</p>
-        <ul>
-          <li>
-            <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Annonces <i class="material-icons right">arrow_drop_down</i></a>
-            <ul id='dropdown1' class='dropdown-content'>
-              <li><a href="{{ path('ani_grenoble_admin_annonce_add') }}">Ajouter</a></li>
-              <li><a href="{{ path('ani_grenoble_admin_annonce_all') }}">Voir</a></li>
-            </ul>
-          </li>
-          <li>
-            <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Compte <i class="material-icons right">arrow_drop_down</i></a>
-            <ul id='dropdown2' class='dropdown-content'>
-              {% if is_granted('ROLE_SUPER_ADMIN') %}
-              <li><a href="{{ path('fos_user_registration_register') }}">Ajouter</a></li>
-              {% endif %}
-              <li><a href="{{ path('fos_user_change_password') }}">Change mot de passe</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      {% endif %}
-
-      {% block body %}
-      {% endblock %}
-
-      <footer class="page-footer">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="white-text">Nous rejoindre</h5>
-              <a class="lien-facebook-footer" target="_blank" href="https://www.facebook.com/groups/226434010895190/"><img alt="ani grenoble facebook" src="{{ asset('image/ani-grenoble-facebook.svg') }}"></a>
-              <p class="grey-text text-lighten-4">Ne faites pas vos Hikikomori et <span style="white-space: nowrap;">rejoinez-nous !</span></p>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a class="nav-link" href="{{ path('ani_grenoble_app_aPropos') }}">A propos</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ path('ani_grenoble_app_photos') }}">Photos</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a>
+                    </li>
+                    <!-- On n'affiche le lien qu'au utilisateur abilités -->
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li>
+                        <a class="nav-link" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a class="nav-link" href="{{ path('fos_user_security_login') }}">Connexion</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li>
+                        <a class="nav-link" href="{{ path('ani_grenoble_app_aPropos') }}">A propos</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ path('ani_grenoble_app_photos') }}">Photos</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a>
+                    </li>
+                    <!-- On n'affiche le lien qu'au utilisateur abilités -->
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                    <li>
+                        <a class="nav-link" href="{{ path('fos_user_security_logout') }}">Deconnexion</a>
+                    </li>
+                    {% else %}
+                    <li>
+                        <a class="nav-link" href="{{ path('fos_user_security_login') }}">Connexion</a>
+                    </li>
+                    {% endif %}
+                </ul>
             </div>
-            <div class="col l4 offset-l2 s12">
-              <h5 class="white-text">Plan du site</h5>
-              <ul>
-                <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_app_homepage') }}">Accueil</a></li>
-                <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_app_aPropos') }}">A propos</a></li>
-                <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a></li>
-                <li><a class="grey-text text-lighten-3" href="{{ path('fos_user_security_login') }}">Connexion</a></li>
-              </ul>
+        </nav>
+
+        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+        <div class="card-panel pink lighten-5">
+            <p class="">Bonjour {{ app.user.username }}.</p>
+            <ul>
+                <li>
+                    <a class='dropdown-button btn' href='#' data-activates='dropdown1'>Annonces <i class="material-icons right">arrow_drop_down</i></a>
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="{{ path('ani_grenoble_admin_annonce_add') }}">Ajouter</a></li>
+                        <li><a href="{{ path('ani_grenoble_admin_annonce_all') }}">Voir</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class='dropdown-button btn' href='#' data-activates='dropdown2'>Images <i class="material-icons right">arrow_drop_down</i></a>
+                    <ul id='dropdown2' class='dropdown-content'>
+                        <li><a href="{{ path('ani_grenoble_admin_image_add') }}">Ajouter</a></li>
+                        <li><a href="{{ path('ani_grenoble_admin_image_all') }}">Voir</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class='dropdown-button btn' href='#' data-activates='dropdown3'>Compte <i class="material-icons right">arrow_drop_down</i></a>
+                    <ul id='dropdown3' class='dropdown-content'>
+                        {% if is_granted('ROLE_SUPER_ADMIN') %}
+                        <li><a href="{{ path('fos_user_registration_register') }}">Ajouter</a></li>
+                        {% endif %}
+                        <li><a href="{{ path('fos_user_change_password') }}">Change mot de passe</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        {% endif %}
+
+        {% block body %}
+        {% endblock %}
+
+        <footer class="page-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Nous rejoindre</h5>
+                        <a class="lien-facebook-footer" target="_blank" href="https://www.facebook.com/groups/226434010895190/"><img alt="ani grenoble facebook" src="{{ asset('image/ani-grenoble-facebook.svg') }}"></a>
+                        <p class="grey-text text-lighten-4">Ne faites pas vos Hikikomori et <span style="white-space: nowrap;">rejoinez-nous !</span></p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Plan du site</h5>
+                        <ul>
+                            <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_app_homepage') }}">Accueil</a></li>
+                            <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_app_aPropos') }}">A propos</a></li>
+                            <li><a class="grey-text text-lighten-3" href="{{ path('ani_grenoble_contact_contact') }}">Contact</a></li>
+                            <li><a class="grey-text text-lighten-3" href="{{ path('fos_user_security_login') }}">Connexion</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="footer-copyright">
-          <div class="container center-align">
-            Copyright © {{ 'now'|date('Y') }}. Tous droits réservés.
-          </div>
-        </div>
-      </footer>
+            <div class="footer-copyright">
+                <div class="container center-align">
+                    Copyright © {{ 'now'|date('Y') }}. Tous droits réservés.
+                </div>
+            </div>
+        </footer>
     </div>
     {% block javascripts %}
     {% javascripts  'js/jquery-3.1.1.min.js''js/materialize.min.js''js/app.js' %}
@@ -119,8 +132,8 @@
     {% endjavascripts  %}
     <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-93768346-1', 'auto');
@@ -128,5 +141,5 @@
 
     </script>
     {% endblock %}
-  </body>
+</body>
 </html>

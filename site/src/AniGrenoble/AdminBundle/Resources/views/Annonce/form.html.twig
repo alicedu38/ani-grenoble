@@ -1,10 +1,12 @@
+{% form_theme form 'form/fields.html.twig' %}
+
 <h3>Formulaire d'annonce</h3>
 
 <div class="form row">
 	{{ form_start(form) }}
 
     {# Les erreurs générales du formulaire. #}
-    {% if form_errors(form) or form_errors(form.titre) or form_errors(form.contenu) or form_errors(form.date) or form_errors(form.auteur) or form_errors(form.image.url) or form_errors(form.image.file)%}
+    {% if form_errors(form) or form_errors(form.titre) or form_errors(form.contenu) or form_errors(form.date) or form_errors(form.auteur) or form_errors(form.image)%}
 	    <div class="card-panel yellow lighten-3">
 		    {{ form_errors(form) }}
 		    {{ form_errors(form.titre) }}
@@ -12,7 +14,6 @@
 		    {{ form_errors(form.date) }}
 		    {{ form_errors(form.auteur) }}
 		    {{ form_errors(form.image.url) }}
-		    {{ form_errors(form.image.file) }}
 		</div>
 	{% endif %}
 
@@ -45,7 +46,7 @@
 		{{ form_widget(form.publie, {'attr': {'class': 'form-control checkbox_publie'}}) }}
     </div>
 
-    <div class="row">
+    {#<div class="row">
 		{{ form_label(form.image.url, "Image URL", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 		{{ form_widget(form.image.url, {'attr': {'class': 'form-control'}}) }}
 
@@ -54,7 +55,11 @@
 
 		{{ form_label(form.image.file, "Image fichier", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 		{{ form_widget(form.image.file, {'attr': {'class': 'form-control'}}) }}
-    </div>
+    </div>#}
+
+	<div class="row">
+		{{form_row(form.image)}}
+	</div>
 
     <div class="row">
 		{{ form_label(form.categories, "Categories", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}

@@ -1,0 +1,27 @@
+{% extends "AniGrenobleAppBundle:Include:layout.html.twig" %}
+
+{% block title %}Supprimer une image - {{ parent() }}{% endblock %}
+
+{% block head %}{{ parent() }}{% endblock %}
+
+{% block site_body %}
+<h2>Supprimer une image</h2>
+  <div class="back-ground-blanc">
+    <p>
+      Etes-vous certain de vouloir supprimer l'image suivante ?
+    </p>
+    <img src="{{asset(image.url)}}" alt="{{image.alt}}">
+
+    <form action="{{ path('ani_grenoble_admin_image_delete', {'id': image.id}) }}" method="post">
+      <a href="{{ path('ani_grenoble_app_homepage', {'id': image.id}) }}" class="btn btn-default">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+        Annuler
+      </a>
+      {# Ici j'ai écrit le bouton de soumission à la main #}
+      <input type="submit" value="Supprimer" class="btn btn-danger" />
+      {# Ceci va générer le champ CSRF #}
+      {{ form_rest(form) }}
+    </form>
+  </div>
+
+{% endblock %}

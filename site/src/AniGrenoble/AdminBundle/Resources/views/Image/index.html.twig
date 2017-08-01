@@ -1,0 +1,21 @@
+{% extends "AniGrenobleAppBundle:Include:layout.html.twig" %}
+
+{% block title %}Images - {{ parent() }}{% endblock %}
+
+{% block head %}{{ parent() }}{% endblock %}
+
+{% block site_body %}
+<h2>Liste de toutes les images créés</h2>
+<div class="back-ground-blanc row admin-image">
+	{% for image in images %}
+		<div class="col l3 m6 s12">
+			<img src="{{asset(image.url)}}" alt="{{image.alt}}">
+			<div class="">
+				<p><a href="{{ path('ani_grenoble_admin_image_edit', {'id': image.id}) }}">Modifier</a></p>
+				<p><a href="{{ path('ani_grenoble_admin_image_delete', {'id': image.id}) }}">Supprimer</a></p>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
+{% endblock %}

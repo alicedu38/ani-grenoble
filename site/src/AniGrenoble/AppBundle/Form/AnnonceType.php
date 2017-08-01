@@ -5,6 +5,7 @@ namespace AniGrenoble\AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use AniGrenoble\AppBundle\Form\Type\ImageType;
 
 class AnnonceType extends AbstractType
 {
@@ -21,7 +22,10 @@ class AnnonceType extends AbstractType
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'attr' => array('class' => 'date')))
-            ->add('image',      new ImageType(), array('required' => false)) // Imbriqué le form image dans celui-ci
+            ->add('image', ImageType::class, array(
+                'label'    => false,
+                'choice_label' => 'alt'
+            ))
             ->add('categories', 'entity', array( //Affiche la liste des catégories
                 'class'    => 'AniGrenobleAppBundle:Categorie',
                 'property' => 'nom',

@@ -1,0 +1,25 @@
+{% extends "AniGrenobleAppBundle:Include:layout.html.twig" %}
+
+{% block title %}Photos - {{ parent() }}{% endblock %}
+
+{% block head %}
+{{ parent() }}
+<meta name="description" content="Association ANI Grenoble, club d'animes, manga, blind test, cosplay, et autre activités en lien avec la culture du Japon.">
+<meta name="keywords" content="manga, animes, Grenonle, cosplay">
+{% endblock %}
+
+{% block site_body %}
+{{ parent() }}
+<h1>Photos de ANI Grenoble</span></h1>
+<div class="back-ground-blanc">
+    <div class="row">
+        {% for photo in photos %}
+        <div class="col l4 m6 s12 element-up">
+            <img src="{{asset (photo.url)}}" alt="{{photo.alt}}">
+        </div>
+        {% else %}
+        <p>Pas (encore !) d'image</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

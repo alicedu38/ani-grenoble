@@ -1,0 +1,14 @@
+{% extends "AniGrenobleAppBundle:Include:layout.html.twig" %}
+
+{% block title %}Ajout article - {{ parent() }}{% endblock %}
+
+{% block head %}{{ parent() }}{% endblock %}
+
+{% block site_body %}
+	<h2>Ajouter un résumé de réunion hébdomadaire ou un evenement</h2>
+
+<div class="back-ground-blanc">
+  	{{ include("AniGrenobleAdminBundle:Image:form.html.twig") }}
+</div>
+
+{% endblock %}

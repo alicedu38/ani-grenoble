@@ -1,0 +1,19 @@
+ani_grenoble_admin_image_add:
+    path:      /add
+    defaults:  { _controller: AniGrenobleAdminBundle:Image:add }
+
+ani_grenoble_admin_image_edit:
+    path:     /edite/{id}
+    defaults: { _controller: AniGrenobleAdminBundle:Image:edit }
+    requirements:
+        id: \d*
+
+ani_grenoble_admin_image_delete:
+    path:     /delete/{id}
+    defaults: { _controller: AniGrenobleAdminBundle:Image:delete }
+    requirements:
+        id: \d*
+
+ani_grenoble_admin_image_all:
+    path:     /
+    defaults: { _controller: AniGrenobleAdminBundle:Image:index }

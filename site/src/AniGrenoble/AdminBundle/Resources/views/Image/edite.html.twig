@@ -1,13 +1,13 @@
 {% extends "AniGrenobleAppBundle:Include:layout.html.twig" %}
 
-{% block title %}Modifier une annonce - {{ parent() }}{% endblock %}
+{% block title %}Modifier une image - {{ parent() }}{% endblock %}
 
 {% block head %}{{ parent() }}{% endblock %}
 
 {% block site_body %}
-	<h2>Modifier un résumé de réunion hébdomadaire ou un evenement</h2>
+	<h2>Modifier une image</h2>
 <div class="back-ground-blanc">
-  	{{ include("AniGrenobleAdminBundle:Annonce:form.html.twig") }}
+  	{{ include("AniGrenobleAdminBundle:Image:form.html.twig") }}
 
   	<p>
     	<a href="{{ path('ani_grenoble_app_homepage') }}" class="btn btn-secondary">Annuler</a>

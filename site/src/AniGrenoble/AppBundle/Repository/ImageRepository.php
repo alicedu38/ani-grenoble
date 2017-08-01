@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class ImageRepository extends EntityRepository
 {
+    public function getPhotos(){
+		$qb = $this->createQueryBuilder('i');
+
+	    $qb->where($qb->expr()->isNotNull('i.categorie'));
+
+	  	return $qb
+	    	->getQuery()
+	    	->getResult();
+	}
 }
