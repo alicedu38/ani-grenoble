@@ -112,6 +112,12 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
   height: 250px;
 }
 
+.img-ligne{
+	vertical-align: bottom;
+	display: inline-block;
+	float: none !important;
+}
+
 @media only screen and (max-width: 450px){
 	.back-ground-blanc{
 		padding: 20px 0px;
@@ -267,6 +273,60 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 		float: none;
 		padding-left: 0px;
 	}
+}
+
+
+/*------Photos------*/
+img{
+	width: 100%;
+    height: auto;
+}
+
+#lightbox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	text-align: center;
+	z-index: 11;
+}
+
+#lightbox span.close {
+    color: #d8d8d8;
+    margin-right: 20px;
+    position: absolute;
+    right: 0;
+    font-size: 30px;
+    top: 10px;
+    cursor: pointer;
+}
+
+#lightbox .contenu {
+    margin: 50px 60px;
+    display: table;
+}
+
+#lightbox .contenu span.left, #lightbox .contenu span.right {
+	display: table-cell;
+	vertical-align: middle;
+	color: #d8d8d8;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+#lightbox .contenu span.left i, #lightbox .contenu span.right i {
+	font-size: 30px;
+}
+
+#lightbox .contenu img {
+	/*width: auto;*/
+	height: 100%;
+	box-shadow: 0 0 25px #111;
+	-webkit-box-shadow: 0 0 25px #111;
+	-moz-box-shadow: 0 0 25px #111;
+	max-width: 940px;
 }
 
 
