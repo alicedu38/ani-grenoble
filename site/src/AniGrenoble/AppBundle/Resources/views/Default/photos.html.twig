@@ -16,10 +16,12 @@
         {% for photo in photos %}
         <div class="photo">
             <a href="{{asset (photo.url)}}" class="contenu"><img src="{{asset (photo.url)}}" alt="{{photo.alt}}"></a>
-            <div class="action">
-                <a href="{{path('ani_grenoble_admin_image_edit', {id : photo.id})}}">Modifier</a>
-                <a href="{{path('ani_grenoble_admin_image_delete', {id : photo.id})}}">Supprimer</a>
-            </div>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                <div class="action">
+                    <a href="{{path('ani_grenoble_admin_image_edit', {id : photo.id})}}">Modifier</a>
+                    <a href="{{path('ani_grenoble_admin_image_delete', {id : photo.id})}}">Supprimer</a>
+                </div>
+            {% endif %}
         </div>
         {% else %}
         <p>Pas (encore !) d'image</p>
