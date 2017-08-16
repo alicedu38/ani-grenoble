@@ -1,8 +1,8 @@
-$(document).on('click','.photos ul li a img', function(e) {
+$(document).on('click','.photos .photo a img', function(e) {
     e.preventDefault();
     var imageSrc = $(this).attr("src");
-    $('.photos ul li').removeClass("show");
-    $(this).closest('.photos ul li').addClass("show");
+    $('.photos .photo').removeClass("show");
+    $(this).closest('.photos .photo').addClass("show");
 
     if ($('#lightbox').length > 0) { // #lightbox exists
         //insert img tag with clicked link's href as src value
@@ -36,15 +36,15 @@ $(document).on('click', '#lightbox span.close', function(){
 function boucleVisionneuse(sens) {
     /*Récupère le src de l'img du li suivant et le met dans le lightbox*/
     if (sens == "prev") {
-        var PrecSuivli = $('.photos ul li.show').prev('li');
+        var PrecSuivli = $('.photos .photo.show').prev('div');
     }else{
-        var PrecSuivli = $('.photos ul li.show').next('li');
+        var PrecSuivli = $('.photos .photo.show').next('div');
     }
     var imgPrecSuivli = PrecSuivli.find('img');
     var imgSrc = imgPrecSuivli.attr("src");
 
     if (imgSrc != null) {
-        $('.photos ul li').removeClass("show");
+        $('.photos .photo').removeClass("show");
         PrecSuivli.addClass("show");
 
         $('#lightbox .contenu').html('<span class="left col l1 m1 s1" aria-hidden="true"><i class="material-icons">chevron_left</i></span><img class="col l10 m10 s10" src="' + imgSrc + '" /><span class="right col l1 m1 s1" aria-hidden="true"><i class="material-icons">chevron_right</i></span>');
@@ -52,14 +52,14 @@ function boucleVisionneuse(sens) {
     }else{
         /*Boucle : retour à la première image*/
         if (sens == "prev") {
-            var premierDernierLi = $('.photos ul li').last();
+            var premierDernierLi = $('.photos .photo').last();
         }else{
-            var premierDernierLi = $('.photos ul li').first();
+            var premierDernierLi = $('.photos .photo').first();
         }
         var imgPremierDernierLi = premierDernierLi.find('img');
         var imgSrcPremierDernierLi = imgPremierDernierLi.attr("src");
 
-        $('.photos ul li').removeClass("show");
+        $('.photos .photo').removeClass("show");
         premierDernierLi.addClass("show");
 
         $('#lightbox .contenu').html('<span class="left col l1 m1 s1" aria-hidden="true"><i class="material-icons">chevron_left</i></span><img class="col l10 m10 s10" src="' + imgSrcPremierDernierLi + '" /><span class="right col l1 m1 s1" aria-hidden="true"><i class="material-icons">chevron_right</i></span>');

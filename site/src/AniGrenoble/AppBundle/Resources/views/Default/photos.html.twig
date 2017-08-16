@@ -13,15 +13,17 @@
 <h1>Photos de ANI Grenoble</span></h1>
 <div class="back-ground-blanc">
     <div class="row photos">
-        <ul>
-            {% for photo in photos %}
-            <li class="col l4 m6 s12 element-up img-ligne">
-                <a href="{{asset (photo.url)}}"><img src="{{asset (photo.url)}}" alt="{{photo.alt}}"></a>
-            </li>
-            {% else %}
-            <p>Pas (encore !) d'image</p>
-            {% endfor %}
-        </ul>
+        {% for photo in photos %}
+        <div class="photo">
+            <a href="{{asset (photo.url)}}" class="contenu"><img src="{{asset (photo.url)}}" alt="{{photo.alt}}"></a>
+            <div class="action">
+                <a href="{{path('ani_grenoble_admin_image_edit', {id : photo.id})}}">Modifier</a>
+                <a href="{{path('ani_grenoble_admin_image_delete', {id : photo.id})}}">Supprimer</a>
+            </div>
+        </div>
+        {% else %}
+        <p>Pas (encore !) d'image</p>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

@@ -118,6 +118,18 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 	float: none !important;
 }
 
+.photos .photo, .admin-image .image{
+	display: inline-block;
+	padding: 20px 10px;
+}
+
+.photos img, .admin-image img{
+	width: 100%;
+    height: auto;
+	max-width: 250px;
+	max-height: 250px;
+}
+
 @media only screen and (max-width: 450px){
 	.back-ground-blanc{
 		padding: 20px 0px;
@@ -277,9 +289,9 @@ input[type=text]:focus:not([readonly])+label, input[type=password]:focus:not([re
 
 
 /*------Photos------*/
-img{
-	width: 100%;
-    height: auto;
+.photos .action a{
+	margin-right: 20px;
+	text-transform: uppercase;
 }
 
 #lightbox {
@@ -484,11 +496,6 @@ img{
 
 
 /*------Admin------*/
-.admin-image img{
-	width: 100%;
-	height: auto;
-}
-
 .image-bibliotheque img{
 	width: 100%;
 	height: auto;
