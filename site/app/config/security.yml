@@ -32,7 +32,7 @@ security:
                 path:   fos_user_security_logout
                 target: /
             remember_me:
-                key:        %secret% # %secret% est un paramètre de parameters.yml
+                secret: %secret% # %secret% est un paramètre de parameters.yml
 
     access_control:
         - { path: ^/logout, roles: [ROLE_ADMIN, ROLE_SUPER_ADMIN] }

@@ -34,10 +34,10 @@
 			</div>
 			<div class="formulaire-contact-contact">
 				<h4>Formulaire</h4>
-				<form action="{{ path('ani_grenoble_contact_contact') }}" method="post" {{ form_enctype(form) }}>
+                {{ form_start(form) }}
 		    		{{ form_widget(form) }}
-		    		<input class="btn btn-primary" type="submit" />
-				</form>
+                {{ form_end(form) }}
+                <p>* Champs obligatoire</p>
 			</div>
 		</div>
 	</div>

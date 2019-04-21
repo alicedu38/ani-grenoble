@@ -1,6 +1,6 @@
-Un mail a était envoyer par {{ enquiry.nom }} à {{ "now" | date("d-m-Y H:i") }}.
+Un mail a été envoyé par {{ name }} le {{ "now" | date("d-m-Y H:i") }}.
 
-Reply-To: {{ enquiry.email }}
-Sujet: {{ enquiry.sujet }}
-Corps:
-{{ enquiry.corps }}
+De : {{ email }}
+Sujet : {{ title }}
+Corps :
+{{ message }}
