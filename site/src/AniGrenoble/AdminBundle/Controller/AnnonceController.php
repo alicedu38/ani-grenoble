@@ -30,7 +30,7 @@ class AnnonceController extends Controller
         $annonce = new Annonce();
 
         // On crée le FormBuilder grâce au service form factory
-        $form = $this->get('form.factory')->create(new AnnonceType, $annonce);
+        $form = $this->createForm(AnnonceType::class, $annonce);
 
         // On fait le lien Requête <-> Formulaire
         // À partir de maintenant, la variable $annonce contient les valeurs entrées dans le formulaire par le visiteur

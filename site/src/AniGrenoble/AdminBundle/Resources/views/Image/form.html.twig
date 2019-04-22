@@ -13,13 +13,13 @@
 	{% endif %}
 
     <div class="row">
-		{{ form_label(form.url, "Image URL", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+		{{ form_label(form.url, "Image URL (uniquement si l'image est sur le web)", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 		{{ form_widget(form.url, {'attr': {'class': 'form-control'}}) }}
 
 		{{ form_label(form.alt, "Image alt", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 		{{ form_widget(form.alt, {'attr': {'class': 'form-control'}}) }}
 
-		{{ form_label(form.file, "Image fichier", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+		{{ form_label(form.file, "Image fichier (uniquement si l'image est sur votre ordianateur)", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
 		{{ form_widget(form.file, {'attr': {'class': 'form-control'}}) }}
     </div>
 

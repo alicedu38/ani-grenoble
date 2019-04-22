@@ -28,7 +28,7 @@ class ImageController extends Controller
     {
         $image = new Image();
 
-        $form = $this->get('form.factory')->create(new ImageType, $image);
+        $form = $this->createForm(ImageType::class, $image);
 
         $form->handleRequest($request);
 

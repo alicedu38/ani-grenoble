@@ -6,6 +6,13 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use AniGrenoble\AppBundle\Form\Type\ImageType;
+use AniGrenoble\AppBundle\Entity\Categorie;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class AnnonceType extends AbstractType
 {
@@ -15,25 +22,25 @@ class AnnonceType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('titre', 'text')
-            ->add('contenu', 'textarea')
-            ->add('auteur', 'text')
-            ->add('date', 'date', array(
+            ->add('titre', TextType::class)
+            ->add('contenu', TextareaType::class)
+            ->add('auteur', TextType::class)
+            ->add('date', DateType::class, array(
                 'widget' => 'single_text',
                 'format' => 'yyyy-MM-dd',
                 'attr' => array('class' => 'date')))
             ->add('image', ImageType::class, array(
-                'label'    => false,
+                'label' => false,
                 'choice_label' => 'alt'
             ))
-            ->add('categories', 'entity', array( //Affiche la liste des catégories
-                'class'    => 'AniGrenobleAppBundle:Categorie',
-                'property' => 'nom',
+            ->add('categories', EntityType::class, array( //Affiche la liste des catégories
+                'class' => Categorie::class,
+                'choice_label' => 'nom',
                 'multiple' => true
                 //'expanded' => true //Checkbox au lieu d'une liste select
             ))
-            ->add('publie', 'checkbox', array('required' => false))// Element non obligatoire dans le form
-            ->add('valider', 'submit');
+            ->add('publie', CheckboxType::class, array('required' => false))// Element non obligatoire dans le form
+            ->add('valider', SubmitType::class);
     }
 
     /**
