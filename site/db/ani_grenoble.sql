@@ -99,7 +99,8 @@ CREATE TABLE IF NOT EXISTS `categorie` (
 
 INSERT INTO `categorie` (`id`, `nom`) VALUES
 (1, 'Evenement'),
-(2, 'Reunion_hebdomadaire');
+(2, 'Reunion_hebdomadaire'),
+(3, 'Galerie');
 
 -- --------------------------------------------------------
 
