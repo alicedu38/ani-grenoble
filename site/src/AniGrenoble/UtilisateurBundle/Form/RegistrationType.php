@@ -4,12 +4,13 @@ namespace AniGrenoble\UtilisateurBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class RegistrationType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('roles', 'choice',  array( 'label' => 'Rôle','choices' => array('ROLE_ADMIN' => 'Admin', 'ROLE_SUPER_ADMIN' => 'Super admin'),'multiple'  => true));
+        $builder->add('roles', ChoiceType::class,  array( 'label' => 'Rôle','choices' => array('ROLE_ADMIN' => 'Admin', 'ROLE_SUPER_ADMIN' => 'Super admin'),'multiple'  => true));
     }
 
     public function getParent()
